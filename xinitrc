@@ -1,0 +1,13 @@
+feh --bg-tile /home/ted/.rwpcd/nice/misty_pond
+
+xset +fp /usr/share/fonts/local
+xset +fp /usr/share/fonts/misc
+xset +fp $HOME/.fonts
+xset fp rehash
+
+xsetroot -cursor_name left_ptr
+xrdb -merge ~/.Xresources
+
+export PATH="~/.bin:${PATH}"
+
+exec bspwm

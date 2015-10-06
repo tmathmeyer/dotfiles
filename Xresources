@@ -1,0 +1,6 @@
+#include ".config/.themes/pastelwhite"
+
+xvt*depth: 32
+URxvt*font: xft:Fantasque Sans Mono:size=11
+URxvt*background: rgba:1100/1100/1100/ffff
+URxvt.perl-ext-common: default,clipboard

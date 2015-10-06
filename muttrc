@@ -1,0 +1,134 @@
+# -*-muttrc-*-
+source "gpg2 -dq $HOME/.config/mutt/shadow.gpg |""
+source ~/.config/mutt/crypto
+
+
+
+# PGP ------------------------------------------------
+set pgp_use_gpg_agent = yes
+set pgp_autosign = yes
+set pgp_auto_decode = yes
+
+# Index Key Bindings ---------------------------------
+bind index gg       first-entry
+bind index G        last-entry
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+bind index n        next-unread
+bind index p        previous-unread
+
+
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>"
+
+
+# Ctrl-A to archive all
+macro index \Ca "T.*<enter><tag-prefix><save-message>=Archived<enter>"
+
+# Sync email
+macro index ss "<shell-escape>mbsync -a<enter>"
+
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index,pager A "<save-message>=Archived<enter>" "Archive Message"
+
+# Goobook
+bind editor <Tab> complete-query
+
+
+
+# Sidebar Navigation ---------------------------------
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind index B bounce-message
+
+# Basic Options --------------------------------------
+set sort = threads       # prettier inbox
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
+unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+unset record             # gmail saves a copy of the sent message
+alternative_order text/html text/enriched text/plain
+auto_view text/html
+
+# Paths ----------------------------------------------
+set folder           = ~/.mail               # mailbox location
+set alias_file       = ~/.config/mutt/alias         # where to store aliases
+set header_cache     = ~/.config/mutt/cache/headers # where to store headers
+set message_cachedir = ~/.config/mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.config/mutt/certificates  # where to store certs
+set mailcap_path     = ~/.config/mutt/mailcap       # entries for filetypes
+set tmpdir           = ~/.config/mutt/temp          # where to keep temp files
+
+
+
+
+# Sidebar Patch --------------------------------------
+set sidebar_delim   = ' │'
+set sidebar_visible = yes
+set sidebar_width   = 30
+color sidebar_new color221 color233
+
+
+
+
+# Status Bar -----------------------------------------
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+
+
+
+
+# Accounts -------------------------------------------
+source "~/.config/mutt/gmail"
+folder-hook $folder 'source ~/.config/mutt/gmail'
+macro index,pager og '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# colors
+color hdrdefault    blue black
+color quoted        blue black
+color signature     blue black
+color attachment    red black
+color message       brightred black
+color error         brightred black
+color indicator     black cyan
+color status        brightgreen black
+color tree          white black
+color normal        white black
+color markers       red black
+color search        white black
+color tilde         brightmagenta black
+color index         blue black ~F
+color index         red black "~N|~O"
+color body          brightwhite black '\*+[^*]+\*+'
+color body          brightwhite black '_+[^_]+_+'
+

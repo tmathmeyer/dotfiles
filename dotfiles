@@ -1,3 +1,28 @@
+[[tmux]]
+tmux.conf -> .tmux.conf
+
+[[COMPTON]]
+compton.helios -> .compton.conf
+
+[[X11]]
+xinitrc -> .xinitrc
+xmodmaprc -> .xmodmaprc
+Xresources -> .Xresources
+
+[[VIM]]
+vim_files -> .vim
+vimrc -> .vimrc
+
 [[BASH]]
 bashrc -> .bashrc
+bash_files -> .bash
+bash_aliases -> .bash_aliases
+bash_profile -> .bash_profile
+
+[[tint3]]
+tint3rc -> .tint3rc
+
+[[MUTT]]
+mbsync -> .mbsyncrc
+muttrc -> .muttrc
 

@@ -1,0 +1,39 @@
+# ------------------------------------------------------------------------------
+# gmail - tmathmeyer@gmail.com
+# ------------------------------------------------------------------------------
+IMAPAccount gmail
+Host imap.gmail.com
+User tmathmeyer@gmail.com
+PassCmd "pass mbsync"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+# The trailing "/" is important
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
+
+Channel sync-gmail-default
+Master :gmail-remote:
+Slave :gmail-local:
+# Select some mailboxes to sync
+Patterns "INBOX"
+Create Both
+SyncState *
+
+Channel sync-gmail-archived
+Master :gmail-remote:"[Gmail]/All Mail"
+Slave :gmail-local:Archived
+Create Slave
+SyncState *
+
+# Get all the channels together into a group.
+Group gmail
+Channel sync-gmail-default
+Channel sync-gmail-archived
+Channel sync-gmail-sent
+
