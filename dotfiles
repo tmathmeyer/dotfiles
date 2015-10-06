@@ -2,7 +2,8 @@
 tmux.conf -> .tmux.conf
 
 [[COMPTON]]
-compton.helios -> .compton.conf
+[ted@helios]
+helios/compton.conf -> .compton.conf
 
 [[X11]]
 xinitrc -> .xinitrc
