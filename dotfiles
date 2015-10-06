@@ -1,29 +1,29 @@
 [[tmux]]
-tmux.conf -> .tmux.conf
+tmux/tmux.conf -> .tmux.conf
 
-[[COMPTON]]
+[[general]]
 [ted@helios]
 helios/compton.conf -> .compton.conf
 
+[[bash]]
+bash -> .bash
+bash/bashrc -> .bashrc
+bash/bash_profile -> .bash_profile
+bash/bash_aliases -> .bash_aliases
+
+[[vim]]
+vim -> .vim
+vim/vimrc -> .vimrc
+
 [[X11]]
-xinitrc -> .xinitrc
-xmodmaprc -> .xmodmaprc
-Xresources -> .Xresources
-
-[[VIM]]
-vim_files -> .vim
-vimrc -> .vimrc
-
-[[BASH]]
-bashrc -> .bashrc
-bash_files -> .bash
-bash_aliases -> .bash_aliases
-bash_profile -> .bash_profile
+X11/xinitrc -> .xinitrc
+X11/xmodmaprc -> .xmodmaprc
+X11/Xresources -> .Xresources
 
 [[tint3]]
-tint3rc -> .tint3rc
+tint3/tint3rc -> .tint3rc
 
-[[MUTT]]
-mbsync -> .mbsyncrc
-muttrc -> .muttrc
+[[mutt]]
+mutt/mbsync -> .mbsyncrc
+mutt/muttrc -> .muttrc
 
