@@ -37,9 +37,6 @@ mutt/shadow -> .config/mutt/shadow.gpg
 [[tint3]]
 tint3/tint3rc -> .tint3rc
 
-[[TEST]]
-TEST/test -> test1
-
 [[psg]]
 psg/psgrc -> .config/psg/psgrc
 psg/git -> .config/psg/git.sh
