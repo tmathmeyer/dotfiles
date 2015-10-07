@@ -1,6 +1,13 @@
 [[tmux]]
 tmux/tmux.conf -> .tmux.conf
 
+[[vim]]
+vim -> .vim
+vim/vimrc -> .vimrc
+
+[[bspwm]]
+bspwm/bspwmrc -> .config/bspwm/bspwmrc
+
 [[general]]
 [ted@helios]
 helios/compton.conf -> .compton.conf
@@ -11,9 +18,8 @@ bash/bashrc -> .bashrc
 bash/bash_profile -> .bash_profile
 bash/bash_aliases -> .bash_aliases
 
-[[vim]]
-vim -> .vim
-vim/vimrc -> .vimrc
+[[sxhkd]]
+sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
 
 [[X11]]
 X11/xinitrc -> .xinitrc
@@ -26,4 +32,12 @@ tint3/tint3rc -> .tint3rc
 [[mutt]]
 mutt/mbsync -> .mbsyncrc
 mutt/muttrc -> .muttrc
+mutt/crypto -> .config/mutt/crypto
+mutt/gmail -> .config/mutt/gmail
+mutt/mailcap -> .config/mutt/mailcap
+mutt/shadow -> .config/mutt/shadow.gpg
+
+[[psg]]
+psg/psgrc -> .config/psg/psgrc
+psg/git -> .config/psg/git.sh
 

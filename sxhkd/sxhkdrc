@@ -1,0 +1,106 @@
+#
+# bspwm hotkeys
+#
+
+super + w
+	bspc window -c
+
+super + {space,f}
+	bspc window -t {floating,fullscreen}
+
+super + {_,shift + }c
+	bspc window -f {next,prev}
+
+super + {comma,period}
+	bspc desktop -C {backward,forward}
+
+super + alt + {h,j,k,l}
+	bspc window -e {left -10,down +10,up -10,right +10}
+
+super + alt + shift + {h,j,k,l}
+	bspc window -e {right -10,up +10,down -10,left +10}
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,window -d} ^{1-9,10}
+
+~button1
+	bspc pointer -g focus
+
+super + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+super + !button{1-3}
+	bspc pointer -t %i %i
+
+super + @button{1-3}
+	bspc pointer -u
+
+
+#
+# my bspwm configs
+#
+alt + ctrl + r
+	bspc desktop -R 90
+
+alt + ctrl + {Left,Right}
+    bspc desktop -f {prev,next}
+
+alt + button{1-3}
+    bspc pointer -g {move, resize_side, resize_corner}
+
+alt + !button{1-3}
+    bspc pointer -t %i %i
+
+alt + @button{1-3}
+    bspc pointer -u
+
+alt + F4
+    bspc window -c
+
+super + {Up,Down,Left,Right}
+	bspc window -p {up,down,left,right}
+
+super + space
+	bspc window -t floating
+
+
+
+#
+# wm independent hotkeys
+#
+
+alt + space
+	exec dmscript
+
+alt + p
+	exec passcript
+
+alt + w
+	exec netmenu -nb "#2d2d2d" -bc "#2d2d2d" -l 10 -w 320 -x 800 -y 0 -sb "#4d4d4d" -nf "#aaaaaa" -sf "#bbbbbb" -p wifi
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+Print
+	gyazo
+
+XF86AudioRaiseVolume
+	amixer set Master 2%+
+
+XF86AudioLowerVolume
+	amixer set Master 2%-
+
+XF86AudioMute
+	amixer set Master toggle
+
+XF86MonBrightnessDown
+	xbacklight -dec 1
+
+XF86MonBrightnessUp
+	xbacklight -inc 1
+
+XF86Tools
+	lock
+
+XF86Search
+	exec dmscript

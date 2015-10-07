@@ -1,0 +1,71 @@
+#!/bin/bash
+
+grn='\e[38;5;46m'
+red='\e[38;5;196m'
+blu='\e[38;5;21m'
+wht='\e[38;5;15m'
+cyn='\e[38;5;14m'
+prp='\e[38;5;200m'
+ylw='\e[38;5;11m'
+
+b='\e[1m'
+d='\e[2m'
+
+function c {
+	RESULT="${!1}${!2}${!3}"
+	echo $RESULT
+}
+
+function r {
+	echo '\[\e[0m\]'
+}
+
+ZERO="0"
+
+git_module(){
+    BRANCH=" $(git-branch-name)"
+    if [ -n "$BRANCH" ]; then
+        echo "$(c ylw)$BRANCH$(commits-ahead-behind)$(changes-count)"
+    else
+        echo ""
+    fi
+}
+
+git-branch-name() {
+    GIT_BRANCH=$(git branch 2>/dev/null | grep "\*" | sed s/*\ //g)
+    echo $GIT_BRANCH;
+}
+
+changes-count(){
+    STAGED_CHANGES="$(c grn)↯$(git status --porcelain 2>/dev/null | grep "^[^? ]" | wc -l | tr -d ' ')"
+    UNSTAGED_CHANGES="$(c red)?$(git status --porcelain 2>/dev/null | grep -v "^[^? ]" | wc -l | tr -d ' ')"
+    STAGED_CHANGES_Z="$(c grn)↯0"
+    STAGED_CHANGES_U="$(c red)?0"
+    INFO=""
+
+    if [ "$STAGED_CHANGES" != "$STAGED_CHANGES_Z" ]; then
+        INFO=" $STAGED_CHANGES"
+    fi
+
+    if [ "$UNSTAGED_CHANGES" != "$STAGED_CHANGES_U" ]; then
+        INFO="$INFO $UNSTAGED_CHANGES"
+    fi
+
+    echo "$INFO"
+}
+
+commits-ahead-behind(){
+    COMMITS_AHEAD=$(git log --branches --not --remotes --oneline 2>/dev/null | wc -l | tr -d ' ')
+    COMMITS_BEHIND=$(git log --remotes --not --branches --oneline 2>/dev/null | wc -l | tr -d ' ')
+    INFO=""
+    
+    if [ "$COMMITS_AHEAD" != "$ZERO" ]; then
+        INFO=" $(c grn)↑$COMMITS_AHEAD"
+    fi
+    if [ "$COMMITS_BEHIND" != "$ZERO" ]; then
+        INFO="$INF0 $(c red)↓$COMMITS_BEHIND"
+    fi
+    echo "$INFO"
+}
+
+echo $(git_module)
