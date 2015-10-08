@@ -44,7 +44,7 @@ export EXPERIMENTAL=yes
 export EDITOR=vim
 export VISUAL=vim
 export CLASSPATH=".:/usr/local/lib/antlr-4.5-complete.jar:$CLASSPATH"
-
+export PATH="~/.bin/:$PATH"
 
 # change directory colors
 eval $(dircolors -b)

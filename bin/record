@@ -1,0 +1,2 @@
+MVNAME=$(date +%Y-%m-%d-%H%M%S)
+ffmpeg -f x11grab -video_size 1920x1080 -i $DISPLAY /var/takeoff/$MVNAME.mkv

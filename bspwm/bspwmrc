@@ -15,6 +15,7 @@ bspc monitor -d browser terminal dev remote trash
 
 wmname LG3D &
 
+dunst &
 sxhkd &
 compton &
 tint3 &
