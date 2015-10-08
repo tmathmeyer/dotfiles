@@ -8,8 +8,10 @@
   options debug
   left
     desktops
-  center
     active
+  center
+    time
+    date
   right
     date
     time
