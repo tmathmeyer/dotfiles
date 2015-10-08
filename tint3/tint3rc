@@ -1,18 +1,18 @@
 [[bar]]
   fontcolor #ffffff
+  background #55000000
   borderwidth 0
   padding 5
   margin 0
   location bottom
   options debug
-  left 2
+  left
     desktops
-    spacer
+  center
     active
-  center 2
+  right
     date
     time
-  right 6
     upload
     download
     weather
@@ -21,28 +21,26 @@
     batterytwo
 
 [active]
-  id text
+  id active
   source window_title
 
 # %N -> Name of the desktop
-# %U -> underlined name of desktop
 [desktops]
-  id radio
-  source workspaces
-  format %N %U
+  id workspace
+  format %N
+  current HIGHLIGHT|UNDERLINE
+
 
 
 
 # split time and date, looks better on a dual monitor system
 [time]
+  id clock
   timeout 5
-  id text
-  source clock
   format %T
 
 [date]
-  id text
-  source clock
+  id clock
   format %a - %d
 
 [spacer]
@@ -52,8 +50,6 @@
 [weather]
   id weather
   format %W, ▉%F (%H)
-  type temperature
-  details-location aligned
   source Seattle,usa
 
 [download]
@@ -70,17 +66,19 @@
 #dual battery system (x240)
 [batteryone]
   id scale
-  forground #EEEE22
-  type unknown
   source battery BAT1
-  format 0
+  high_font #00FF00
+  med_font #FF0000
+  low_font #222222
+  low_color #FF0000
 
 [batterytwo]
   id scale
-  forground #11EE11
-  type unknown
   source battery BAT0
-  format 1
+  high_font #00FF00
+  med_font #FF0000
+  low_font #222222
+  low_color #FF0000
 
 [volume]
   id scale
