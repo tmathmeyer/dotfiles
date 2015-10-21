@@ -13,10 +13,9 @@
     time
     date
   right
-    date
-    time
     upload
     download
+    ram
     weather
     volume
     batteryone
@@ -52,7 +51,7 @@
 [weather]
   id weather
   format %W, ▉%F (%H)
-  source Seattle,usa
+  source Boston,usa
 
 [download]
   id graph
@@ -87,3 +86,6 @@
   source alsa 0 Master
   shell amixer set Master toggle
 
+[ram]
+  id shell
+  source free | grep Mem | awk '{print $3/$2 * 100.0}'

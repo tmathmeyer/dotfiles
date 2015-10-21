@@ -14,7 +14,7 @@ bspc config gapless_monocle        true
 bspc monitor -d browser terminal dev remote trash
 
 wmname LG3D &
-
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 dunst &
 sxhkd &
 compton &
