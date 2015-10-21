@@ -2,7 +2,7 @@
   fontcolor #ffffff
   background #55000000
   borderwidth 0
-  padding 5
+  padding 6
   margin 0
   location bottom
   options debug
