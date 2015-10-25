@@ -1,9 +1,12 @@
-[[tmux]]
-tmux/tmux.conf -> .tmux.conf
-
 [[vim]]
 vim -> .vim
 vim/vimrc -> .vimrc
+
+[[tmux]]
+tmux/tmux.conf -> .tmux.conf
+
+[[bspwm]]
+bspwm/bspwmrc -> .config/bspwm/bspwmrc
 
 [[bin]]
 .bin/autoup -> bin/autoup
@@ -14,29 +17,23 @@ bin/passcript -> .bin/passcript
 bin/wifimenu -> .bin/wifimenu.sh
 bin/record -> .bin/record
 
-[[bspwm]]
-bspwm/bspwmrc -> .config/bspwm/bspwmrc
-
-[[general]]
-[ted@helios]
-helios/compton.conf -> .compton.conf
-
 [[bash]]
 bash -> .bash
 bash/bashrc -> .bashrc
 bash/bash_profile -> .bash_profile
 bash/bash_aliases -> .bash_aliases
 
-[[sxhkd]]
-sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
+[[general]]
+[ted@helios]
+helios/compton.conf -> .compton.conf
 
 [[X11]]
 X11/xinitrc -> .xinitrc
 X11/xmodmaprc -> .xmodmaprc
 X11/Xresources -> .Xresources
 
-[[tint3]]
-tint3/tint3rc -> .tint3rc
+[[sxhkd]]
+sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
 
 [[mutt]]
 mutt/mbsync -> .mbsyncrc
@@ -46,7 +43,11 @@ mutt/gmail -> .config/mutt/gmail
 mutt/mailcap -> .config/mutt/mailcap
 mutt/shadow -> .config/mutt/shadow.gpg
 
+[[tint3]]
+tint3/tint3rc -> .tint3rc
+
 [[psg]]
 psg/psgrc -> .config/psg/psgrc
 psg/git -> .config/psg/git.sh
+psgrc -> /home/ted/.config/psg/psg.json
 
