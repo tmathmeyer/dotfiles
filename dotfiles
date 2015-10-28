@@ -50,7 +50,6 @@ mutt/mailcap -> .config/mutt/mailcap
 mutt/shadow -> .config/mutt/shadow.gpg
 
 [[psg]]
-psg/psgrc -> .config/psg/psgrc
 psg/git -> .config/psg/git.sh
-psgrc -> /home/ted/.config/psg/psg.json
+psg/psgrc -> .config/psg/psg.json
 
