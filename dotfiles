@@ -36,7 +36,7 @@ X11/xmodmaprc -> .xmodmaprc
 X11/Xresources -> .Xresources
 
 [[dunst]]
-dunstrc -> .config/dunst/dunstrc
+dunst/dunstrc -> .config/dunst/dunstrc
 
 [[tint3]]
 tint3/tint3rc -> .tint3rc
