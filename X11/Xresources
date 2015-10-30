@@ -3,5 +3,7 @@
 xvt*depth: 32
 URxvt*font: xft:Fantasque Sans Mono:size=12
 URxvt*background: rgba:1100/1100/1100/ffff
+URxvt*foreground: #ffffff
+URxvt*scrollBar:        false
 
 URxvt*lineSpace: -1
