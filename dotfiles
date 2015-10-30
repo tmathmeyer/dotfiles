@@ -49,7 +49,6 @@ tint3/tint3rc -> .tint3rc
 [ted@hyperion]
 tint3/tint3rc.hyperion -> .tint3rc
 
-
 [[mutt]]
 mutt/mbsync -> .mbsyncrc
 mutt/muttrc -> .muttrc
