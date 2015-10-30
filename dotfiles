@@ -6,7 +6,7 @@ vim -> .vim
 vim/vimrc -> .vimrc
 
 [[bin]]
-.bin/autoup -> bin/autoup
+bin/autoup -> .bin/autoup
 bin/autoup -> .bin/autoup
 bin/dmenu_run -> .bin/dmenu_run
 bin/dmscript -> .bin/dmscript
@@ -26,6 +26,10 @@ bash -> .bash
 bash/bashrc -> .bashrc
 bash/bash_profile -> .bash_profile
 bash/bash_aliases -> .bash_aliases
+
+[[irssi]]
+irssi/config -> .irssi/config
+irssi/theme -> .irssi/default.theme
 
 [[sxhkd]]
 sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
