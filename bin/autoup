@@ -11,4 +11,6 @@ FILE="/tmp/$FILENAME"
 chmod 644 $FILE
 scp -i "$SSHKEY" "$FILE" "${USER}@${SERVER}:${WEBROOT}/${WEBDIR}/$FILENAME"
 echo "http://$WEBDIR.$SERVER/$FILENAME" | xclip
-notify-send "$FILENAME uploaded!"
+if [ "$2" != "silent" ]; then
+    notify-send "$FILENAME uploaded!"
+fi
