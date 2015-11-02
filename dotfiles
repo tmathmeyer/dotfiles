@@ -16,10 +16,12 @@ bin/record -> .bin/record
 
 [[bspwm]]
 bspwm/bspwmrc -> .config/bspwm/bspwmrc
+[ted@hyperion]
+bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
 
-[[general]]
+[[compton]]
 [ted@helios]
-helios/compton.conf -> .compton.conf
+compton/compton.conf.helios -> .compton.conf
 
 [[bash]]
 bash -> .bash
@@ -44,6 +46,8 @@ dunst/dunstrc -> .config/dunst/dunstrc
 
 [[tint3]]
 tint3/tint3rc -> .tint3rc
+[ted@hyperion]
+tint3/tint3rc.hyperion -> .tint3rc
 
 [[mutt]]
 mutt/mbsync -> .mbsyncrc
