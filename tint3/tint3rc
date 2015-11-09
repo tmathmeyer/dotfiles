@@ -13,9 +13,9 @@
     time
     date
   right
+    ram
     upload
     download
-    ram
     weather
     volume
     batteryone
@@ -37,7 +37,7 @@
 # split time and date, looks better on a dual monitor system
 [time]
   id clock
-  timeout 5
+  timeout 1
   format %T
 
 [date]
@@ -54,22 +54,24 @@
   source Boston,usa
 
 [download]
-  id graph
-  source network wlp3s0 down
-  forground #D58D6B
+  id network
+  style graph
+  source wlp3s0 down
+  forground #ff0000
 
 [upload]
-  id graph
-  source network wlp3s0 up
+  id network
+  style graph
+  source wlp3s0 up
   shell dmenu_run
-  forground #748DA6
+  fontcolor #748DA6
 
 #dual battery system (x240)
 [batteryone]
   id scale
   source battery BAT1
   high_font #00FF00
-  med_font #FF0000
+  med_font #FFFF00
   low_font #222222
   low_color #FF0000
 
@@ -77,7 +79,7 @@
   id scale
   source battery BAT0
   high_font #00FF00
-  med_font #FF0000
+  med_font #FFFF00
   low_font #222222
   low_color #FF0000
 
