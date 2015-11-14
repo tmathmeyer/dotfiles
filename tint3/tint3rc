@@ -14,7 +14,6 @@
     date
   right
     ram
-    upload
     download
     weather
     volume
@@ -37,7 +36,7 @@
 # split time and date, looks better on a dual monitor system
 [time]
   id clock
-  timeout 1
+  timeout 5
   format %T
 
 [date]
