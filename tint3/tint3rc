@@ -38,6 +38,7 @@
   id clock
   timeout 5
   format %T
+  shell bg.sh
 
 [date]
   id clock

@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/ted/git'
-let g:netrw_dirhist_2='/home/ted/git/tint3'
-let g:netrw_dirhist_3='/home/ted/git/dotfiles'
-let g:netrw_dirhist_4='/home/ted/STATS_C/.git'
-let g:netrw_dirhist_5='/home/ted/.dotfiles'
-let g:netrw_dirhist_6='/home/ted/git/rtv'
-let g:netrw_dirhist_7='/home/ted/checksimspython/student_3'
-let g:netrw_dirhist_8='/home/ted/webware/webware/node_modules'
-let g:netrw_dirhist_9='/home/ted/git/acm-competition/challenges2015_10'
+let g:netrw_dirhist_cnt =0
