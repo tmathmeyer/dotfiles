@@ -1,9 +1,10 @@
 [[bar]]
   fontcolor #ffffff
-  background #55000000
-  borderwidth 0
+  background #aa256f5c
+  borderwidth 5
+  bordercolor #aa11886a
   padding 6
-  margin 0
+  margin 10
   location bottom
   options debug
   left
@@ -28,7 +29,7 @@
 [desktops]
   id workspace
   format %N
-  current HIGHLIGHT|UNDERLINE
+  active:background #802215
 
 
 
