@@ -16,6 +16,7 @@ bin/record -> .bin/record
 
 [[bspwm]]
 bspwm/bspwmrc -> .config/bspwm/bspwmrc
+bspwm/gruvbox -> .config/bspwm/gruvbox
 [ted@hyperion]
 bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
 
