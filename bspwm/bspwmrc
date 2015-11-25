@@ -1,21 +1,12 @@
 #! /bin/sh
 xmodmap ~/.xmodmaprc &
 
-bspc config top_padding            26
-bspc config border_width           2
-bspc config normal_border_color   "#69b2d6" #blue
-bspc config presel_border_color   "#69e1d3" #cyan
-bspc config focused_border_color  "#89d2f6" #"#db7464" #red
-bspc config window_gap             0
-bspc config split_ratio            0.50
-bspc config borderless_monocle     true
-bspc config gapless_monocle        true
-
-bspc monitor -d browser terminal dev remote trash
+~/.config/bspwm/cyan
 
 wmname LG3D &
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 dunst &
 sxhkd &
 compton &
 tint3 &
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
