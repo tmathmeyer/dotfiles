@@ -1,4 +1,6 @@
 #!/bin/bash
+feh --bg-tile /home/ted/.rwpcd/nice/misty_pond
+
 bspc config border_width    3
 bspc config window_gap      5
 bspc config split_ratio         0.50
