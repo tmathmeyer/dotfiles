@@ -1,4 +1,5 @@
 #!/bin/bash
+feh --bg-tile /home/ted/.rwpcd/nice/misty_pond
 
 bspc config top_padding            26
 bspc config border_width           2
