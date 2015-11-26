@@ -1,6 +1,5 @@
 [[bar]]
   fontcolor #ffffff
-  background #55000000
   borderwidth 0
   padding 6
   margin 0
@@ -28,7 +27,7 @@
 [desktops]
   id workspace
   format %N
-  current HIGHLIGHT|UNDERLINE
+  active:background #aa777777
 
 
 
