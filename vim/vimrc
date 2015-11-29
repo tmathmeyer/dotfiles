@@ -20,6 +20,7 @@ let g:NERDTreeHijackNetrw=0
 :match TrailingWhiteSpace /\s\+$/
 
 set nu
+set rnu
 
 syntax on
 

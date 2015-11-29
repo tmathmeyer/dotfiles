@@ -1,28 +1,98 @@
 #!/bin/bash
-ZERO="0"
+
+gitgrep() {
+    RES="$(echo "$1" | grep "$2" | wc -l)"
+    if [ "$RES" != "$3" ]; then
+        echo $RES
+    fi
+}
+
+localdiffs() {
+    res=$(git status --porcelain)
+    zero=""
+    untracked=$(gitgrep "$res" "^??" 0)
+    modified=$(gitgrep "$res" "^\ M" 0)
+    deleted=$(gitgrep "$res" "^\ D" 0)
+    added=$(gitgrep "$res" "^\ A" 0)
+    renamed=$(gitgrep "$res" "^\ R" 0)
+    conflicting=$(gitgrep "$res" "^\ U" 0)
+
+    if [ "$zero" != "$untracked" ]; then
+        untracked=" ?$untracked"
+    else
+        untracked=""
+    fi
+
+    if [ "$zero" != "$modified" ]; then
+        modified=" Δ$modified"
+    else
+        modified=""
+    fi
+
+    if [ "$zero" != "$renamed" ]; then
+        renamed=" ⇄$renamed"
+    else
+        renamed=""
+    fi
+
+    if [ "$zero" != "$conflicting" ]; then
+        conflicting=" ☢$conflicting"
+    else
+        conflicting=""
+    fi
+
+    addeddeleted=""
+
+    if [ "$zero" == "$deleted" ]; then
+        if [ "$zero" == "$added" ]; then
+            addeddeleted=""
+        else
+            addeddeleted=" +$added"
+        fi
+    else
+        if [ "$zero" == "$added" ]; then
+            addeddeleted=" ✖$deleted"
+        else
+            addeddeleted=" ±$added/$deleted"
+        fi
+    fi
+
+    if [ "$zero" != "$added" ]; then
+        added=" +$added"
+    else
+        added=""
+    fi
+
+    echo "$conflicting$addeddeleted$modified$renamed$untracked"
+}
 
 git_module() {
-    BRANCH="$(git-branch-name)"
+    BRANCH="$(gitbranchname)"
     if [ -n "$BRANCH" ]; then
-        echo ":$BRANCH$(changes-count)"
+        echo " $BRANCH $(localdiffs) $(commitsaheadbehind)"
     else
         echo ""
     fi
 }
 
-git-branch-name() {
+gitbranchname() {
     GIT_BRANCH=$(git branch 2>/dev/null | grep "\*" | sed s/*\ //g)
     echo $GIT_BRANCH;
 }
 
-changes-count(){
-    CHANGES="$(git status --porcelain | wc -l)"
-    ZED="0"
+commitsaheadbehind(){
+    COMMITS_AHEAD=$(git log --branches --not --remotes --oneline 2>/dev/null | wc -l | tr -d ' ')
+    COMMITS_BEHIND=$(git log --remotes --not --branches --oneline 2>/dev/null | wc -l | tr -d ' ')
     INFO=""
-    if [ "$CHANGES" != "$ZED" ]; then
-        INFO=":$CHANGES"
+    ZERO="0"
+    if [ "$COMMITS_AHEAD" != "$ZERO" ]; then
+        INFO=" ↑$COMMITS_AHEAD"
+    fi
+    if [ "$COMMITS_BEHIND" != "$ZERO" ]; then
+        INFO="$INF0 ↓$COMMITS_BEHIND"
     fi
     echo "$INFO"
 }
 
 echo $(git_module)
+

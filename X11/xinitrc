@@ -1,5 +1,4 @@
-feh --bg-tile /home/ted/.rwpcd/nice/misty_pond
-
+#!/bin/bash
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/misc
 xset +fp $HOME/.fonts
