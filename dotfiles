@@ -1,9 +1,17 @@
-[[tmux]]
-tmux/tmux.conf -> .tmux.conf
-
 [[vim]]
 vim -> .vim
 vim/vimrc -> .vimrc
+
+[[tmux]]
+tmux/tmux.conf -> .tmux.conf
+
+[[bspwm]]
+bspwm/bspwmrc -> .config/bspwm/bspwmrc
+bspwm/gruvbox -> .config/bspwm/gruvbox
+bspwm/cyan -> .config/bspwm/cyan
+bspwm/noufie -> .config/bspwm/noufie
+[ted@hyperion]
+bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
 
 [[bin]]
 bin/autoup -> .bin/autoup
@@ -14,17 +22,9 @@ bin/passcript -> .bin/passcript
 bin/wifimenu -> .bin/wifimenu.sh
 bin/record -> .bin/record
 
-[[bspwm]]
-bspwm/bspwmrc -> .config/bspwm/bspwmrc
-bspwm/gruvbox -> .config/bspwm/gruvbox
-bspwm/cyan -> .config/bspwm/cyan
-bspwm/noufie -> .config/bspwm/noufie
-[ted@hyperion]
-bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
-
-[[compton]]
-[ted@helios]
-compton/compton.conf.helios -> .compton.conf
+[[irssi]]
+irssi/config -> .irssi/config
+irssi/theme -> .irssi/default.theme
 
 [[bash]]
 bash -> .bash
@@ -32,25 +32,13 @@ bash/bashrc -> .bashrc
 bash/bash_profile -> .bash_profile
 bash/bash_aliases -> .bash_aliases
 
-[[irssi]]
-irssi/config -> .irssi/config
-irssi/theme -> .irssi/default.theme
-
-[[sxhkd]]
-sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
-
 [[X11]]
 X11/xinitrc -> .xinitrc
 X11/xmodmaprc -> .xmodmaprc
 X11/Xresources -> .Xresources
 
-[[dunst]]
-dunst/dunstrc -> .config/dunst/dunstrc
-
-[[tint3]]
-tint3/tint3rc -> .tint3rc
-[ted@hyperion]
-tint3/tint3rc.hyperion -> .tint3rc
+[[sxhkd]]
+sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
 
 [[mutt]]
 mutt/mbsync -> .mbsyncrc
@@ -59,6 +47,22 @@ mutt/crypto -> .config/mutt/crypto
 mutt/gmail -> .config/mutt/gmail
 mutt/mailcap -> .config/mutt/mailcap
 mutt/shadow -> .config/mutt/shadow.gpg
+
+[[tint3]]
+tint3/tint3rc -> .tint3rc
+[ted@hyperion]
+tint3/tint3rc.hyperion -> .tint3rc
+
+[[dunst]]
+dunst/dunstrc -> .config/dunst/dunstrc
+
+[[compton]]
+[ted@helios]
+compton/compton.conf.helios -> .compton.conf
+
+[[vimb]]
+vimb/style.css -> .config/vimb/style.css
+vimb/userscript.js -> .config/vimb/scripts.js
 
 [[psg]]
 psg/git -> .config/psg/git.sh

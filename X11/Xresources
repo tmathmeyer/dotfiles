@@ -1,7 +1,7 @@
 #include "/home/ted/.config/.themes/pastelwhite"
 
 URxvt*font: xft:Fantasque Sans Mono:size=12
-URxvt*background: rgba:1100/1100/1100/ffff
+URxvt*background: rgba:3300/3300/3300/eeee
 URxvt*foreground: #ffffff
 URxvt*scrollBar:        false
 
