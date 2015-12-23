@@ -5,8 +5,8 @@
 super + w
 	bspc window -c
 
-super + {space,f}
-	bspc window -t {floating,fullscreen}
+super + {space,t,f}
+	bspc window -t {floating,tiled,fullscreen}
 
 super + {_,shift + }c
 	bspc window -f {next,prev}

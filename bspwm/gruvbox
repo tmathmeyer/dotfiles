@@ -1,8 +1,8 @@
 #!/bin/bash
-feh --bg-tile /home/ted/.rwpcd/nice/misty_pond
+feh --bg-tile /home/ted/.rwpcd/nice/snowy-lake.jpg
 
 bspc config border_width    3
-bspc config window_gap      5
+bspc config window_gap      30
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
@@ -19,4 +19,4 @@ bspc config normal_sticky_border_color '#1d2021'
 bspc config focused_sticky_border_color '#d5c4a1'
 bspc config urgent_border_color '#cc241d'
 
-bspc monitor -d browser terminal dev remote trash
+bspc monitor -d "web" "</>" "*@*" "other"

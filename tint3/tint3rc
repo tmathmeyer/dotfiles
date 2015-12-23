@@ -1,5 +1,6 @@
 [[bar]]
   fontcolor #ffffff
+  fontname Fantasque Sans Mono
   borderwidth 0
   padding 6
   margin 0
@@ -12,7 +13,6 @@
     time
     date
   right
-    ram
     download
     weather
     volume
@@ -23,16 +23,11 @@
   id active
   source window_title
 
-# %N -> Name of the desktop
 [desktops]
   id workspace
   format %N
-  active:background #aa777777
+  active:background #2002
 
-
-
-
-# split time and date, looks better on a dual monitor system
 [time]
   id clock
   timeout 5
@@ -43,13 +38,9 @@
   id clock
   format %a - %d
 
-[spacer]
-  id text
-  source |
-
 [weather]
   id weather
-  format %W, ▉%F (%H)
+  format %W, %F°F (%H%%)
   source Boston,usa
 
 [download]
@@ -57,13 +48,6 @@
   style graph
   source wlp3s0 down
   forground #ff0000
-
-[upload]
-  id network
-  style graph
-  source wlp3s0 up
-  shell dmenu_run
-  fontcolor #748DA6
 
 #dual battery system (x240)
 [batteryone]
@@ -86,7 +70,3 @@
   id scale
   source alsa 0 Master
   shell amixer set Master toggle
-
-[ram]
-  id shell
-  source free | grep Mem | awk '{print $3/$2 * 100.0}'
