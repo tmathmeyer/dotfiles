@@ -1,8 +1,11 @@
-#include "/home/ted/.config/.themes/pastelwhite"
-
+! the font face
 URxvt*font: xft:Fantasque Sans Mono:size=12
-URxvt*background: #333333
-URxvt*foreground: #ffffff
-URxvt*scrollBar:  false
 
+! font colors
+#include "/home/ted/.themes/font/solarizedDark"
+
+! terminal colors and settings
+URxvt*background: #002b36
+URxvt*foreground: #657b83
+URxvt*scrollBar:  false
 URxvt*lineSpace: -1
