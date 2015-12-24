@@ -6,6 +6,6 @@ URxvt*font: xft:Fantasque Sans Mono:size=12
 
 ! terminal colors and settings
 URxvt*background: #002b36
-URxvt*foreground: #657b83
+URxvt*foreground: #93a1a1
 URxvt*scrollBar:  false
 URxvt*lineSpace: -1
