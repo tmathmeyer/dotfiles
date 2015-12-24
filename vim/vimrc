@@ -25,7 +25,8 @@ set rnu
 syntax on
 
 set t_Co=256
-colorscheme spacegrey
+set background=dark
+colorscheme solarized
 
 filetype indent on
 filetype plugin indent on
