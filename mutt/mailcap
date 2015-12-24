@@ -1,3 +1,4 @@
 text/html;    elinks %s; nametemplate=%s.html
-text/html;     elinks -dump -default-mime-type text/html %s; needsterminal; copiousoutput;
-image/*; feh %s;
+text/html;    elinks -dump -default-mime-type text/html %s; needsterminal; copiousoutput;
+image/*;      feh %s;
+text/*;       vim %s;

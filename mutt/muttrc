@@ -47,6 +47,8 @@ bind index,pager <right>  sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index B bounce-message
+# Sidebar Navigation ---------------------------------
+
 
 # Basic Options --------------------------------------
 set sort = threads       # prettier inbox
@@ -64,56 +66,42 @@ set thorough_search      # strip headers and eval mimes before searching
 unset record             # gmail saves a copy of the sent message
 alternative_order text/html text/enriched text/plain
 auto_view text/html
+# Basic Options --------------------------------------
+
 
 # Paths ----------------------------------------------
-set folder           = ~/.mail               # mailbox location
+set folder           = ~/.mail                      # mailbox location
 set alias_file       = ~/.config/mutt/alias         # where to store aliases
 set header_cache     = ~/.config/mutt/cache/headers # where to store headers
 set message_cachedir = ~/.config/mutt/cache/bodies  # where to store bodies
 set certificate_file = ~/.config/mutt/certificates  # where to store certs
 set mailcap_path     = ~/.config/mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.config/mutt/temp          # where to keep temp files
-
-
+# Paths ----------------------------------------------
 
 
 # Sidebar Patch --------------------------------------
-set sidebar_delim   = ' │'
+set sidebar_delim   = '  ║║'
 set sidebar_visible = yes
 set sidebar_width   = 30
 color sidebar_new color221 color233
-
-
+# Sidebar Patch --------------------------------------
 
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
-
-
-
+# Status Bar -----------------------------------------
 
 
 # Accounts -------------------------------------------
 source "~/.config/mutt/gmail"
 folder-hook $folder 'source ~/.config/mutt/gmail'
 macro index,pager og '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
+# Accounts -------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# colors
+# Colors ---------------------------------------------
 color hdrdefault    blue black
 color quoted        blue black
 color signature     blue black
@@ -131,4 +119,4 @@ color index         blue black ~F
 color index         red black "~N|~O"
 color body          brightwhite black '\*+[^*]+\*+'
 color body          brightwhite black '_+[^_]+_+'
-
+# Colors ---------------------------------------------
