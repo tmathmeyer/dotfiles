@@ -17,6 +17,7 @@ bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 bind index n        next-unread
 bind index p        previous-unread
+# Index Key Bindings ---------------------------------
 
 
 
@@ -41,9 +42,6 @@ bind editor <Tab> complete-query
 
 
 # Sidebar Navigation ---------------------------------
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index B bounce-message
@@ -94,11 +92,45 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 # Status Bar -----------------------------------------
 
 
+# Header Options -------------------------------------
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+# Header Options -------------------------------------
+
+
+# Pager View Options ---------------------------------
+set pager_index_lines = 10 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+set tilde                  # show tildes like in vim
+unset markers              # no ugly plus signs
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G  bottom
+bind attach <return> view-mailcap
+# Pager View Options ---------------------------------
+
+
 # Accounts -------------------------------------------
 source "~/.config/mutt/gmail"
 folder-hook $folder 'source ~/.config/mutt/gmail'
 macro index,pager og '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
 # Accounts -------------------------------------------
+
+
+# Index View Options ---------------------------------
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                         # like gmail
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+# Index View Options ---------------------------------
 
 
 # Colors ---------------------------------------------
