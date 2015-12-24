@@ -11,12 +11,12 @@
         {
             "name": "user",
             "forground": 253,
-            "background": 243
+            "background": 1
         },
         {
             "name": "path",
             "forground": 253,
-            "background": 238,
+            "background": 3,
             "options" : {
                 "match": {
                     "from" : "/",
