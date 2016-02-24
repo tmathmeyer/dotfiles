@@ -1,15 +1,11 @@
-/* Script to insert various data into form fields.
- * Given data is an array of "Selector:Value" tupel.
- * ["selector:value","...:..."]
- * Example call from within vimb:
- * ::e! _vbform.fill(["input[name='login']:daniel","input[name='password']:p45w0rD"]);
- *
- * Note the double ':' in front, this tells vimb not to write the command into
- * history or the last excmd register ":. */
 window.onload = function() {
     (function(ctx) {
         ctx.pagetest('github.com', function() {
             document.body.style.fontFamily = "Impact,Charcoal,sans-serif";
+        });
+        ctx.pagetest('reddit.com/r/unixporn', function() {
+            document.getElementById('siteTable').style.margin = "0px";
+            ctx.removeElementsByClass('side');
         });
         (function() {
             var inputs = document.getElementsByTagName("input");
@@ -24,6 +20,12 @@ window.onload = function() {
             });
         })();
     })({
+        removeElementsByClass: function(className){
+            var elements = document.getElementsByClassName(className);
+            while(elements.length > 0){
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        },
         pagetest: function(page, callback, ctx) {
             if (document.URL.indexOf(page) > -1) {
                 callback(document.URL, ctx);

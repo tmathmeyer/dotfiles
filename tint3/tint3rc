@@ -4,7 +4,7 @@
   borderwidth 0
   padding 6
   margin 0
-  location bottom
+  location top
   options debug
   left
     desktops
@@ -44,9 +44,8 @@
   source Boston,usa
 
 [download]
-  id network
-  style graph
-  source wlp3s0 down
+  id graph
+  source network wlp3s0 down
   forground #ff0000
 
 #dual battery system (x240)
