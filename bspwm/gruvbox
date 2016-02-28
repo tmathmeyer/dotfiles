@@ -1,5 +1,5 @@
 #!/bin/bash
-feh --bg-tile /home/ted/.rwpcd/nice/snowy-lake.jpg
+feh --bg-tile /home/ted/.rwpcd/pine.png
 
 bspc config border_width    3
 bspc config window_gap      10

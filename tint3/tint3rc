@@ -1,9 +1,11 @@
 [[bar]]
   fontcolor #ffffff
+  background #002b36
   fontname Fantasque Sans Mono
   borderwidth 0
   padding 6
-  margin 0
+  manual-margin-left 95
+  manual-margin-right 95
   location top
   options debug
   left
@@ -26,7 +28,7 @@
 [desktops]
   id workspace
   format %N
-  active:background #2002
+  active:background #28545c
 
 [time]
   id clock
