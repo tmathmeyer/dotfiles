@@ -36,6 +36,15 @@ window.onload = function() {
             if (active.nodeName == 'TEXTAREA' || active.nodeName == 'INPUT') {
 
             }
+        },
+        loadcss: function(filename) {
+            var fileref=document.createElement('script');
+            fileref.setAttribute("rel", "stylesheet");
+            fileref.setAttribute("type", "text/css");
+            fileref.setAttribute("href", filename);
+            if (typeof fileref!="undefined") {
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+            }
         }
     });
 }

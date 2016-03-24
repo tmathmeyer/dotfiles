@@ -9,6 +9,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -74,8 +75,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_c_check_header = 0
+let g:syntastic_c_auto_refresh_includes = 1
+let g:syntastic_c_check_header = 1
 let g:syntastic_c_no_include_search = 1
 
-let g:syntastic_c_include_dirs = [ '/usr/include/freetype2', 'include' ]
+let g:syntastic_c_include_dirs = [
+            \'/usr/include/freetype2',
+            \'include',
+            \'/usr/include/glib-2.0/',
+            \'/usr/lib/glib-2.0/include',
+            \'/usr/include/gdk-pixbuf-2.0'
+            \]
 

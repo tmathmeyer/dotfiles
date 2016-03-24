@@ -1,8 +1,10 @@
 #!/bin/bash
-feh --bg-tile /home/ted/.rwpcd/pine.png
+feh --bg-tile /home/ted/.rwpcd/pine.jpg
 
+bspc config right_padding 65
+bspc config left_padding 65
 bspc config border_width    3
-bspc config window_gap      10
+bspc config window_gap      30
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true

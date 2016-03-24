@@ -15,11 +15,19 @@
     time
     date
   right
-    download
+    network
+    RAM
     weather
     volume
     batteryone
     batterytwo
+
+[network]
+  id graph
+  source multi-network wlp3s0
+  targets upload download
+  upload up x400 #ccffcc
+  download down x1 #aabbcc
 
 [active]
   id active
@@ -45,10 +53,10 @@
   format %W, %F°F (%H%%)
   source Boston,usa
 
-[download]
+[RAM]
   id graph
-  source network wlp3s0 down
-  forground #ff0000
+  source memory
+  forground #00ff00
 
 #dual battery system (x240)
 [batteryone]
