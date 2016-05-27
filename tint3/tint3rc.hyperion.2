@@ -1,0 +1,77 @@
+[[bar]]
+  fontcolor #aaaaaa
+  background #002b36
+  fontname FantasqueSansMono
+  borderwidth 0
+  padding 6
+  manual-margin-left 0
+  manual-margin-right 0
+  location top
+  options debug
+  left
+    desktops
+    active
+  center
+    time
+    date
+  right
+    weather
+    volume
+
+[network]
+  id graph
+  source multi-network wlp3s0
+  targets upload download
+  upload up x400 #ccffcc
+  download down x1 #aabbcc
+
+[active]
+  id active
+  source window_title
+
+[desktops]
+  id workspace
+  format %N
+  active:background #28545c
+
+[time]
+  id clock
+  timeout 1
+  format %T
+  shell bg.sh
+
+[date]
+  id clock
+  format %a - %d
+
+[weather]
+  id weather
+  format %W, %F°F (%H%%)
+  source Boston,usa
+
+[RAM]
+  id graph
+  source memory
+  forground #00ff00
+
+#dual battery system (x240)
+[batteryone]
+  id scale
+  source battery BAT1
+  high_font #00FF00
+  med_font #FFFF00
+  low_font #222222
+  low_color #FF0000
+
+[batterytwo]
+  id scale
+  source battery BAT0
+  high_font #00FF00
+  med_font #FFFF00
+  low_font #222222
+  low_color #FF0000
+
+[volume]
+  id scale
+  source alsa 0 Master
+  shell amixer set Master toggle
