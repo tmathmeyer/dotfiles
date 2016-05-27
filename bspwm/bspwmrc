@@ -1,6 +1,6 @@
 #! /bin/sh
 xmodmap ~/.xmodmaprc &
-
+bspc wm -h off
 ~/.config/bspwm/gruvbox
 
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
@@ -10,4 +10,3 @@ dunst &
 sxhkd &
 compton &
 tint3 &
-

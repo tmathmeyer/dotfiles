@@ -32,6 +32,9 @@ bash/bashrc -> .bashrc
 bash/bash_profile -> .bash_profile
 bash/bash_aliases -> .bash_aliases
 
+[[THEMES]]
+tomorrow.night.bright -> .themes/tomorrow.night.bright
+
 [[X11]]
 X11/xinitrc -> .xinitrc
 X11/xmodmaprc -> .xmodmaprc

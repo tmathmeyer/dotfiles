@@ -32,6 +32,22 @@ servers = (
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
+  },
+  {
+    address = "tmathmeyer.me";
+    chatnet = "wpiirc";
+    port = "2054";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "tmathmeyer.me";
+    chatnet = "freenode";
+    port = "2054";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -104,6 +120,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
+  wpiirc = { type = "IRC"; };
 };
 
 channels = (
@@ -371,6 +388,6 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = "Unknown"; user_name = "ted"; nick = "ted"; };
+  core = { real_name = "Ted Meyer"; user_name = "tmathmeyer"; nick = "tmathmeyer"; };
   "fe-text" = { actlist_sort = "refnum"; };
 };

@@ -1,5 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/ted/git/X11_RUST/src'
-let g:netrw_dirhist_2='/home/ted/Downloads/wpi-cs4536/racket-warmup/submissions/william.a.hartman@gmail.com'
-let g:netrw_dirhist_3='/home/ted/Downloads/wpi-cs4536/racket-warmup/submissions/williamvanr@gmail.com'
+let g:netrw_dirhist_cnt =0
