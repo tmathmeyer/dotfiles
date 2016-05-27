@@ -42,6 +42,9 @@ bind editor <Tab> complete-query
 
 
 # Sidebar Navigation ---------------------------------
+bind index,pager <down>   sidebar-next      
+bind index,pager <up>     sidebar-prev        
+bind index,pager <right>  sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index B bounce-message
@@ -55,7 +58,6 @@ set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
 unset move               # gmail does that
-set delete               # don't ask, just do
 unset confirmappend      # don't ask, just do!
 set quit                 # don't ask, just do!!
 set beep_new             # bell on new mails

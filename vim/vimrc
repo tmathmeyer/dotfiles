@@ -27,7 +27,7 @@ syntax on
 
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme tomorrownightbright
 
 filetype indent on
 filetype plugin indent on
@@ -65,7 +65,8 @@ let NERDTreeShowHidden=1
 
 :hi Directory guifg=#00FFFF ctermfg=cyan
 
-
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

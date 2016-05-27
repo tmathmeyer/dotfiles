@@ -1,11 +1,11 @@
 [[bar]]
   fontcolor #aaaaaa
   background #002b36
-  fontname Fantasque Sans Mono
+  fontname FantasqueSansMono
   borderwidth 0
   padding 6
-  manual-margin-left 95
-  manual-margin-right 95
+  manual-margin-left 0
+  manual-margin-right 0
   location top
   options debug
   left
@@ -15,8 +15,6 @@
     time
     date
   right
-    network
-    RAM
     weather
     volume
     batteryone
@@ -40,7 +38,7 @@
 
 [time]
   id clock
-  timeout 5
+  timeout 1
   format %T
   shell bg.sh
 

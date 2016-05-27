@@ -1,24 +1,25 @@
 #!/bin/bash
-feh --bg-tile /home/ted/.rwpcd/pine.jpg
+feh --bg-fill /home/ted/.rwpcd/stairs.jpg
 
-bspc config right_padding 65
-bspc config left_padding 65
-bspc config border_width    3
-bspc config window_gap      30
-bspc config split_ratio         0.50
-bspc config borderless_monocle  true
-bspc config gapless_monocle     true
-bspc config focus_by_distance   true
-bspc config normal_frame_opacity 0.0
+BORDER=3
+PADDING=0
+GAP=5
+
+bspc config right_padding         $PADDING
+bspc config left_padding          $PADDING
+bspc config border_width          $BORDER
+bspc config window_gap            $GAP
+bspc config split_ratio           0.50
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_by_distance     true
+bspc config normal_frame_opacity  0.0
 bspc config focused_frame_opacity 0.1
 bspc config focus_follows_pointer true
-bspc config top_padding            26
+bspc config top_padding           $(expr 27 + $BORDER)
 
-bspc config normal_border_color '#282828'
-bspc config focused_border_color '#d5c4a1'
-bspc config presel_border_color '#d79921'
-bspc config normal_sticky_border_color '#1d2021'
-bspc config focused_sticky_border_color '#d5c4a1'
-bspc config urgent_border_color '#cc241d'
+bspc config normal_border_color         '#a57451'
+bspc config focused_border_color        '#d5c4a1'
+bspc config presel_feedback_color         '#d79921'
 
 bspc monitor -d "web" "</>" "*@*" "other"

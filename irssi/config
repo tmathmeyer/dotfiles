@@ -32,6 +32,15 @@ servers = (
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
+  },
+  {
+    address = "tmathmeyer.me";
+    chatnet = "wpiirc";
+    port = "2054";
+    password = "tmathmeyer/wpiirc:2054meyer";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -104,6 +113,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
+  wpiirc = { type = "IRC"; };
 };
 
 channels = (
