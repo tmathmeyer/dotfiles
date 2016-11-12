@@ -54,7 +54,7 @@ mutt/shadow -> .config/mutt/shadow.gpg
 [[tint3]]
 tint3/tint3rc -> .tint3rc
 [ted@hyperion]
-tint3/tint3rc.hyperion -> .tint3rc
+tint3/tint3rc.hyperion.2 -> .tint3rc
 
 [[dunst]]
 dunst/dunstrc -> .config/dunst/dunstrc
