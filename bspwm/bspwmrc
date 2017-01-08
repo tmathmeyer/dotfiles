@@ -1,5 +1,6 @@
 #! /bin/sh
 xmodmap ~/.xmodmaprc &
+bspc wm -h off
 
 ~/.config/bspwm/gruvbox
 

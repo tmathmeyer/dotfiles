@@ -49,9 +49,12 @@ precmd() {
 export EXPERIMENTAL=yes
 export EDITOR=vim
 export VISUAL=vim
-export VIMRUNTIME=/usr/share/vim/vim74
+export VIMRUNTIME=/usr/share/vim/vim80
 export CLASSPATH=".:/usr/local/lib/antlr-4.5-complete.jar:$CLASSPATH"
 export PATH="~/.bin/:$PATH"
 
 # change directory colors
 eval $(dircolors -b)
+
+
+. /home/ted/torch-cl/install/bin/torch-activate

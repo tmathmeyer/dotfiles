@@ -10,8 +10,6 @@ bspwm/bspwmrc -> .config/bspwm/bspwmrc
 bspwm/gruvbox -> .config/bspwm/gruvbox
 bspwm/cyan -> .config/bspwm/cyan
 bspwm/noufie -> .config/bspwm/noufie
-[ted@hyperion]
-bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
 
 [[bin]]
 bin/autoup -> .bin/autoup
@@ -50,8 +48,6 @@ mutt/shadow -> .config/mutt/shadow.gpg
 
 [[tint3]]
 tint3/tint3rc -> .tint3rc
-[ted@hyperion]
-tint3/tint3rc.hyperion -> .tint3rc
 
 [[dunst]]
 dunst/dunstrc -> .config/dunst/dunstrc

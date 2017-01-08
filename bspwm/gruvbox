@@ -1,5 +1,5 @@
 #!/bin/bash
-feh --bg-tile /home/ted/.rwpcd/nice/snowy-lake.jpg
+feh --bg-fill /home/ted/.wallpaper/bridge_to_goldmyer.jpg
 
 bspc config border_width    3
 bspc config window_gap      10
@@ -19,4 +19,6 @@ bspc config normal_sticky_border_color '#1d2021'
 bspc config focused_sticky_border_color '#d5c4a1'
 bspc config urgent_border_color '#cc241d'
 
-bspc monitor -d "web" "</>" "*@*" "other"
+
+bspc monitor DisplayPort-1 -d 1 2 3 4
+bspc monitor HDMI-A-1 -d 5 6 7 8

@@ -3,25 +3,25 @@
 #
 
 super + w
-	bspc window -c
+	bspc node -c
 
 super + {space,t,f}
-	bspc window -t {floating,tiled,fullscreen}
+	bspc node -t {floating,tiled,fullscreen}
 
 super + {_,shift + }c
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}
 
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
 super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
+	bspc node -e {left -10,down +10,up -10,right +10}
 
 super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
+	bspc node -e {right -10,up +10,down -10,left +10}
 
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+	bspc {desktop -f,node -d} ^{1-9,10}
 
 ~button1
 	bspc pointer -g focus
@@ -39,10 +39,17 @@ super + @button{1-3}
 #
 # my bspwm configs
 #
+
+alt + t
+    urxvt
+
 alt + ctrl + r
 	bspc desktop -R 90
 
 alt + ctrl + {Left,Right}
+    bspc desktop -f {prev,next
+
+alt + ctrl + {h,l}
     bspc desktop -f {prev,next}
 
 alt + button{1-3}
@@ -55,13 +62,13 @@ alt + @button{1-3}
     bspc pointer -u
 
 alt + F4
-    bspc window -c
+    bspc node -c
 
 super + {Up,Down,Left,Right}
-	bspc window -p {up,down,left,right}
+	bspc node -p {up,down,left,right}
 
 super + space
-	bspc window -t floating
+	bspc node -t floating
 
 
 

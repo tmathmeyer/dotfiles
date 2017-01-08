@@ -4,6 +4,7 @@ xset +fp /usr/share/fonts/misc
 xset +fp $HOME/.fonts
 xset fp rehash
 
+xrandr --output HDMI-A-1 --left-of DisplayPort-1
 xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xresources
 
