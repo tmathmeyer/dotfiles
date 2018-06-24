@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Set font information
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/misc
 xset +fp $HOME/.fonts
@@ -7,6 +9,5 @@ xset fp rehash
 xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xresources
 
-export PATH="~/.bin:${PATH}"
-
+# Let bspwm handle starting other daemons.
 exec bspwm

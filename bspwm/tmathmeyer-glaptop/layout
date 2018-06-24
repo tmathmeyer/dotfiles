@@ -1,0 +1,19 @@
+#!/bin/bash
+
+bspc config -m DP-3 bottom_padding  30
+bspc config border_width            2
+bspc config window_gap              2
+bspc config split_ratio             0.5
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+bspc config focus_by_distance       true
+bpsc config normal_frame_opacity    0.0
+bspc config focused_frame_opacity   0.1
+bspc config focus_follows_pointer   true
+bspc config bottom_padding          30
+
+bspc monitor -d I II III IV
+
+bspc config normal_border_color     '#282828'
+bspc config focused_border_color    '#d5c4a1'
+bspc config presel_border_color     '#d79921'

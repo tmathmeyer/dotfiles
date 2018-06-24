@@ -1,13 +1,15 @@
 #! /bin/sh
-xmodmap ~/.xmodmaprc &
 
-~/.config/bspwm/gruvbox
+PATH="$HOME/.xbin/:$PATH"
 
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+if [ -e ~/.config/bspwm/daemons.sh ]; then
+  exec ~/.config/bspwm/daemons.sh
+fi
 
-wmname LG3D &
-dunst &
-sxhkd &
-compton &
-tint3 &
+if [ -e ~/.config/bspwm/layout.sh ]; then
+  exec ~/.config/bspwm/layout.sh
+fi
 
+if [ -e ~/.config/bspwm/wallpaper.sh ]; then
+  exec ~/.config/bspwm/wallpaper.sh
+fi

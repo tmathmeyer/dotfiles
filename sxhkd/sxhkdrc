@@ -1,106 +1,42 @@
-#
-# bspwm hotkeys
-#
-
-super + w
-	bspc window -c
-
-super + {space,t,f}
-	bspc window -t {floating,tiled,fullscreen}
-
-super + {_,shift + }c
-	bspc window -f {next,prev}
-
-super + {comma,period}
-	bspc desktop -C {backward,forward}
-
-super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
-
-super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
-
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
-
-~button1
-	bspc pointer -g focus
-
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
-
-super + !button{1-3}
-	bspc pointer -t %i %i
-
-super + @button{1-3}
-	bspc pointer -u
-
-
-#
-# my bspwm configs
-#
-alt + ctrl + r
-	bspc desktop -R 90
-
-alt + ctrl + {Left,Right}
-    bspc desktop -f {prev,next}
-
-alt + button{1-3}
-    bspc pointer -g {move, resize_side, resize_corner}
-
-alt + !button{1-3}
-    bspc pointer -t %i %i
-
-alt + @button{1-3}
-    bspc pointer -u
-
-alt + F4
-    bspc window -c
-
-super + {Up,Down,Left,Right}
-	bspc window -p {up,down,left,right}
-
-super + space
-	bspc window -t floating
-
-
-
-#
-# wm independent hotkeys
-#
-
-alt + space
-	exec dmscript
-
-alt + p
-	exec passcript
-
-alt + w
-	exec netmenu -nb "#2d2d2d" -bc "#2d2d2d" -l 10 -w 320 -x 800 -y 0 -sb "#4d4d4d" -nf "#aaaaaa" -sf "#bbbbbb" -p wifi
-
+# Reload functions
 super + Escape
 	pkill -USR1 -x sxhkd
 
-Print
-	gyazo
+super + t
+    gnome-terminal
 
-XF86AudioRaiseVolume
-	amixer set Master 2%+
+ctrl + alt + c
+    google-chrome
 
-XF86AudioLowerVolume
-	amixer set Master 2%-
+ctrl + alt + s
+    sublime_text
 
-XF86AudioMute
-	amixer set Master toggle
+ctrl + alt + l
+    robolock -c "#FF00FF"
 
-XF86MonBrightnessDown
-	xbacklight -dec 1
+ctrl + alt + p
+    fcmd.py 40x2 prodaccess
 
-XF86MonBrightnessUp
-	xbacklight -inc 1
+ctrl + alt + h
+    fcmd.py 80x40 htop
 
-XF86Tools
-	lock
+~button1
+    bspc pointer -g focus
 
-XF86Search
-	exec scrot
+ctrl + alt + r
+    bspc node @/ -R 90
+
+ctrl + alt + {Left,Right}
+    bspc desktop -f {prev,next}
+
+ctrl + alt + w
+    bspc node -c
+
+alt + space
+    exec dmscript
+
+super + space
+    bspc node -t ~floating
+
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} ^{1-9,10}

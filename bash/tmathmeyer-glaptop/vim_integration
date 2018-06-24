@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export EDITOR=vim
+export VISUAL=vim
+export VIMRUNTIME=/usr/share/vim/vim74

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Status bar
+if [ "$(which tint3)" ]; then
+  tint3 &
+fi
+
+# Hotkey manager
+if [ "$(which sxhkd)" ]; then
+  sxhkd &
+fi
+
+# Compositor
+if [ "$(which compton)" ]; then
+  compton &
+fi

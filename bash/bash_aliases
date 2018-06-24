@@ -1,48 +1,36 @@
-#================================#
-#            exports             #
-#================================#
+#!/bin/bash
 
+# Antlr support
+if [ -e "/usr/local/lib/antlr-4.4-complete.jar" ]; then
+    alias antlr4='java -jar /usr/local/lib/antlr-4.4-complete.jar'
+    alias grun='java org.antlr.v4.runtime.misc.TestRig'
+fi
 
-alias exeunt='pkill terminal'
-alias android-connect='simple-mtpfs -o allow_other /media/nexus7'
-alias android-disconnect='fusermount -u /media/nexus7'
-alias antlr4='java -jar /usr/local/lib/antlr-4.4-complete.jar'
-alias grun='java org.antlr.v4.runtime.misc.TestRig'
-alias slip='java -jar /usr/local/bin/slip.jar'
+# Ensure that tmux launches with the right flags
+if [ "$(which tmux)" ]; then
+    alias tmux='tmux -2'
+fi
 
-#================================#
-#            aliases             #
-#================================#
+# SSH hostname aliases
+if [ -e ~/.bash/ssh_aliases ]; then
+    source ~/.bash/ssh_aliases
+fi
 
-alias tmux='tmux -2'
-
+# ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+alias lra='ls -Ra | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+
+# grep default flags
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias install='sudo pacman -S'
-alias search='pacman -Ss'
-alias remove='sudo pacman -Rs'
-
-alias open='thunar'
-
-alias ccc='ssh tjmeyer@ccc.wpi.edu'
-alias hyp='ssh -Y ted@tm.wpi.edu'
-alias mhtc='ssh -Y tjmeyer@mhtc.cs.wpi.edu'
-
-alias wpi='sudo netctl start wlp2s0-WPI-Wireless'
-alias rewpi='sudo netctl stop wlp2s0-WPI-Wireless && sudo netctl start wlp2s0-WPI-Wireless'
-
-
+# Git aliases
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
-
-alias lra='ls -Ra | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
 extract () {
     if [ -f $1 ] ; then
@@ -63,14 +51,4 @@ extract () {
      else
          echo "'$1' is not a valid file"
      fi
-}
-
-touchdir() {
-    mkdir $1
-    cd $1
-}
-
-loginstall() {
-    sudo pacman -S $1
-    touch /home/ted/.programs/$1
 }

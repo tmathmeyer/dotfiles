@@ -2,7 +2,7 @@
 URxvt*font: xft:Fantasque Sans Mono:size=12
 
 ! font colors
-#include "/home/ted/.themes/font/solarizedDark"
+#include "/home/tmathmeyer/.themes/font/solarizedDark"
 
 ! terminal colors and settings
 URxvt*background: #002b36

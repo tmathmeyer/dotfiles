@@ -1,70 +1,88 @@
-[[vim]]
-vim -> .vim
-vim/vimrc -> .vimrc
+[[bash]]
+bash/bash_aliases -> $HOME/.bash_aliases
+bash/bash_logout -> $HOME/.bash_logout
+bash/bash_profile -> $HOME/.bash_profile
+bash/bashrc -> $HOME/.bashrc
+bash/git.sh -> $HOME/.bash/git.sh
+
+
+[[bash]] @ tmathmeyer-glaptop
+bash/tmathmeyer-glaptop/golang_support -> $HOME/.bash/golang_support
+bash/tmathmeyer-glaptop/set_ps1 -> $HOME/.bash/set_ps1
+bash/tmathmeyer-glaptop/ssh_aliases -> $HOME/.bash/ssh_aliases
+bash/tmathmeyer-glaptop/vim_integration -> $HOME/.bash/vim_integration
+
 
 [[tmux]]
-tmux/tmux.conf -> .tmux.conf
+tmux/tmux.conf -> $HOME/.tmux.conf
 
-[[bspwm]]
-bspwm/bspwmrc -> .config/bspwm/bspwmrc
-bspwm/gruvbox -> .config/bspwm/gruvbox
-bspwm/cyan -> .config/bspwm/cyan
-bspwm/noufie -> .config/bspwm/noufie
-[ted@hyperion]
-bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
-
-[[bin]]
-bin/autoup -> .bin/autoup
-bin/autoup -> .bin/autoup
-bin/dmenu_run -> .bin/dmenu_run
-bin/dmscript -> .bin/dmscript
-bin/passcript -> .bin/passcript
-bin/wifimenu -> .bin/wifimenu.sh
-bin/record -> .bin/record
-
-[[irssi]]
-irssi/config -> .irssi/config
-irssi/theme -> .irssi/default.theme
-
-[[bash]]
-bash -> .bash
-bash/bashrc -> .bashrc
-bash/bash_profile -> .bash_profile
-bash/bash_aliases -> .bash_aliases
-
-[[X11]]
-X11/xinitrc -> .xinitrc
-X11/xmodmaprc -> .xmodmaprc
-X11/Xresources -> .Xresources
-
-[[sxhkd]]
-sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
-
-[[mutt]]
-mutt/mbsync -> .mbsyncrc
-mutt/muttrc -> .muttrc
-mutt/crypto -> .config/mutt/crypto
-mutt/gmail -> .config/mutt/gmail
-mutt/mailcap -> .config/mutt/mailcap
-mutt/shadow -> .config/mutt/shadow.gpg
-
-[[tint3]]
-tint3/tint3rc -> .tint3rc
-[ted@hyperion]
-tint3/tint3rc.hyperion -> .tint3rc
-
-[[dunst]]
-dunst/dunstrc -> .config/dunst/dunstrc
-
-[[compton]]
-[ted@helios]
-compton/compton.conf.helios -> .compton.conf
-
-[[vimb]]
-vimb/style.css -> .config/vimb/style.css
-vimb/userscript.js -> .config/vimb/scripts.js
 
 [[psg]]
-psg/git -> .config/psg/git.sh
-psg/psgrc -> .config/psg/psg.json
+psg/psgrc -> $HOME/.config/psg/psg.json
 
+
+[[dunst]]
+dunst/dunstrc -> $HOME/.config/dunst/dunstrc
+
+
+[[irssi]]
+irssi/config -> $HOME/.irssi/config
+irssi/theme -> $HOME/.irssi/default.theme
+
+
+[[mutt]] @ helios
+mutt/crypto -> $HOME/.config/mutt/crypto
+mutt/gmail -> $HOME/.config/mutt/gmail
+mutt/mailcap -> $HOME/.config/mutt/mailcap
+mutt/mbsync -> $HOME/.mbsyncrc
+mutt/muttrc -> $HOME/.muttrc
+mutt/shadow -> $HOME/.config/mutt/shadow.gpg
+
+
+[[vimb]] @ helios
+vimb/style.css -> $HOME/.config/vimb/style.css
+vimb/userscript.js -> $HOME/.config/vimb/scripts.js
+
+
+[[X11]]
+X11/xinitrc -> $HOME/.xinitrc
+X11/xmodmaprc -> $HOME/.xmodmaprc
+
+
+[[X11]] @ tmathmeyer-glaptop
+X11/Xresources -> $HOME/.Xresources
+
+
+[[bspwm]]
+bspwm/bspwmrc -> $HOME/.config/bspwm/bspwmrc
+
+
+[[bspwm]] @ tmathmeyer-glaptop
+bspwm/tmathmeyer-glaptop/daemons -> $HOME/.config/bspwm/daemons.sh
+bspwm/tmathmeyer-glaptop/layout -> $HOME/.config/bspwm/layout.sh
+bspwm/tmathmeyer-glaptop/wallpaper -> $HOME/.config/bspwm/wallpaper.sh
+
+
+[[sxhkd]]
+sxhkd/sxhkdrc -> $HOME/.config/sxhkd/sxhkdrc
+
+
+[[bin]] @ helios
+bin/autoup -> $HOME/.bin/autoup
+bin/record -> $HOME/.bin/record
+bin/wifimenu -> $HOME/.bin/wifimenu.sh
+
+
+[[bin]]
+bin/dmenu_run -> $HOME/.bin/dmenu_run
+bin/dmscript -> $HOME/.bin/dmscript
+bin/passcript -> $HOME/.bin/passcript
+
+
+[[tint3]] @ tmathmeyer-glaptop
+tint3/tint3rc -> $HOME/.tint3rc
+
+
+[[vim]]
+vim -> $HOME/.vim
+vim/vimrc -> $HOME/.vimrc

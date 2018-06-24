@@ -40,6 +40,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set cpoptions-=J
+set backspace=indent,eol,start
 
 noremap <right> zl
 noremap <s-right> zL
@@ -78,4 +79,5 @@ let g:syntastic_c_check_header = 0
 let g:syntastic_c_no_include_search = 1
 
 let g:syntastic_c_include_dirs = [ '/usr/include/freetype2', 'include' ]
+let g:syntastic_cpp_compiler_options = ' -std=c++17'
 
