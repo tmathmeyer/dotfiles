@@ -5,7 +5,7 @@ super + Escape
 super + t
     gnome-terminal
 
-ctrl + alt + c
+ctrl + alt + shift + c
     google-chrome
 
 ctrl + alt + s
