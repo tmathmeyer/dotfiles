@@ -1,22 +1,19 @@
 #! /bin/sh
 
-# Set up modifier keys (required for moving windows now).
-xmodmap ~/.xmodmaprc &
-
 # Hightlight window under the mouse at all times.
-bspc config focus_follows_pointer true
+# bspc config focus_follows_pointer true
 
 # Use the super key to resize and move windows.
-bspc config pointer_modifier mod4
+# bspc config pointer_modifier mod4
 
 # Use left mouse to move windows.
-bspc config pointer_action1 move
+# bspc config pointer_action1 move
 
 # Use middle mouse for resizing only edges.
-bspc config pointer_action2 resize_side
+# bspc config pointer_action2 resize_side
 
 # use right mouse to resize freely.
-bspc config pointer_action3 resize_corner
+# bspc config pointer_action3 resize_corner
 
 # borders
 bspc config border_width 3
@@ -31,27 +28,5 @@ bspc config split_ratio            0.50
 bspc config borderless_monocle     true
 bspc config gapless_monocle        true
 
-bspc rule -a Qemu-system-x86_64 state=floating
-bspc rule -a MCEdit state=floating
-bspc rule -a feh state=floating
-
-# java fixes
-wmname LG3D # non-reparenting WM
-
-# set wallpaper
-$HOME/.config/bspwm/setup-wallpaper &
-
-# start compositor (BEFORE tint3!!)
-compton &
-
-# start tint3
-$HOME/.config/bspwm/start-tint3 &
-
-# start notification daemon
-dunst &
-
-# setup desktops
-$HOME/.config/bspwm/setup-desktops &
-
-# enable hotkey daemon
-sxhkd &
+# Run post bspwm start
+$HOME/.config/x11/post_wm.sh &

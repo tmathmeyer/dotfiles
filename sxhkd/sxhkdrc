@@ -20,9 +20,6 @@ alt + ctrl + {h,j,k,l}
 alt + ctrl + r
   bspc node -R 90
 
-~button1
-	bspc pointer -g focus
-
 alt + t
     urxvt
 
@@ -31,9 +28,6 @@ alt + ctrl + {Left,Right}
 
 alt + button{1-3}
     bspc pointer -g {move, resize_side, resize_corner}
-
-alt + !button{1-3}
-    bspc pointer -t %i %i
 
 alt + @button{1-3}
     bspc pointer -u
@@ -48,31 +42,4 @@ super + space
 	bspc node -t floating
 
 alt + space
-	exec dmscript
-
-alt + p
-	exec passcript
-
-alt + w
-	exec netmenu -nb "#2d2d2d" -bc "#2d2d2d" -l 10 -w 320 -x 800 -y 0 -sb "#4d4d4d" -nf "#aaaaaa" -sf "#bbbbbb" -p wifi
-
-XF86AudioRaiseVolume
-	amixer set Master 2%+
-
-XF86AudioLowerVolume
-	amixer set Master 2%-
-
-XF86AudioMute
-	amixer set Master toggle
-
-XF86MonBrightnessDown
-	xbacklight -dec 1
-
-XF86MonBrightnessUp
-	xbacklight -inc 1
-
-XF86Tools
-	lock
-
-XF86Search
-	exec scrot -s
+	$HOME/.bin/dmscript

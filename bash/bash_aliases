@@ -1,14 +1,6 @@
-alias slip='java -jar /usr/local/bin/slip.jar'
-
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
 extract () {
     if [ -f $1 ] ; then

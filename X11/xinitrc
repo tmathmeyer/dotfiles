@@ -1,19 +1,22 @@
 #!/bin/bash
-xset +fp /usr/share/fonts/local
-xset +fp /usr/share/fonts/misc
+
+# Set up the fonts
+# xset +fp /usr/share/fonts/local
+# xset +fp /usr/share/fonts/misc
+# xset +fp $HOME/.fonts
 xset fp rehash
 
+# Always set the cursor to the normal cursor
 xsetroot -cursor_name left_ptr
+
+# Can do things like disable caps lock
+xmodmap ~/.xmodmaprc
+
+# merge and include any resources
 xrdb -merge ~/.Xresources
 
-export PATH="~/.bin:${PATH}"
+# Run pre-WM scripts
+exec ~/.config/x11/pre_wm.sh &
 
-export MON_LEFT="DP-2"
-export MON_RIGHT="DP-0"
-
-xrandr --auto --output $MON_LEFT --left-of $MON_RIGHT
-xrandr --auto --output $MON_LEFT --rotate left
-xrandr --auto --output $MON_RIGHT --mode 3840x2160 --pos 2160x1380
-
-
-exec bspwm
+# Start the window manager
+exec ~/.config/x11/start_wm.sh

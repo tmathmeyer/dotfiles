@@ -3,12 +3,10 @@ case $- in
       *) return;;
 esac
 
-
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
 
 # set bash variables
 HISTCONTROL=ignoreboth
@@ -16,7 +14,6 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s histappend
-
 
 # enable bash_completion
 if ! shopt -oq posix; then
@@ -27,10 +24,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# install inpulse arg completion script if it exists
 if [ -f /home/ted/.bin/impulse_arg_complete.sh ]; then
   . /home/ted/.bin/impulse_arg_complete.sh
 fi
-
 
 # set the PS1 based on whether X is running
 PROMPT_COMMAND=precmd
@@ -52,14 +49,10 @@ precmd() {
   fi
 }
 
-
-
 # export other environment variables
-export EXPERIMENTAL=yes
 export EDITOR=vim
 export VISUAL=vim
 export VIMRUNTIME=/usr/share/vim/vim82
-export CLASSPATH=".:/usr/local/lib/antlr-4.5-complete.jar:$CLASSPATH"
 export PATH="~/.bin/:$PATH"
 
 # change directory colors

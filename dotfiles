@@ -1,69 +1,65 @@
-[[vim]]
-vim -> .vim
-vim/vimrc -> .vimrc
-
 [[tmux]]
 tmux/tmux.conf -> .tmux.conf
 
+
 [[bspwm]]
 bspwm/bspwmrc -> .config/bspwm/bspwmrc
-[ted@hyperion]
-bspwm/setup-desktops -> .config/bspwm/setup-desktops
 bspwm/setup-wallpaper -> .config/bspwm/setup-wallpaper
 bspwm/start-tint3 -> .config/bspwm/start-tint3
 
-[[bin]]
-bin/autoup -> .bin/autoup
-bin/autoup -> .bin/autoup
-bin/dmenu_run -> .bin/dmenu_run
-bin/dmscript -> .bin/dmscript
-bin/passcript -> .bin/passcript
-bin/wifimenu -> .bin/wifimenu.sh
-bin/record -> .bin/record
-
-[[irssi]]
-irssi/config -> .irssi/config
-irssi/theme -> .irssi/default.theme
 
 [[bash]]
 bash -> .bash
-bash/bashrc -> .bashrc
-bash/bash_profile -> .bash_profile
 bash/bash_aliases -> .bash_aliases
+bash/bash_profile -> .bash_profile
+bash/bashrc -> .bashrc
+
 
 [[X11]]
+X11/Xresources -> .Xresources
 X11/xinitrc -> .xinitrc
 X11/xmodmaprc -> .xmodmaprc
-X11/Xresources -> .Xresources
+
 
 [[sxhkd]]
 sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
 
-[[mutt]]
-mutt/mbsync -> .mbsyncrc
-mutt/muttrc -> .muttrc
-mutt/crypto -> .config/mutt/crypto
-mutt/gmail -> .config/mutt/gmail
-mutt/mailcap -> .config/mutt/mailcap
-mutt/shadow -> .config/mutt/shadow.gpg
 
 [[tint3]]
 tint3/tint3rc -> .tint3rc
-[ted@hyperion]
-tint3/tint3rc.hyperion -> .tint3rc
+
 
 [[dunst]]
 dunst/dunstrc -> .config/dunst/dunstrc
 
+
 [[compton]]
-[ted@helios]
 compton/compton.conf.helios -> .compton.conf
 
-[[vimb]]
-vimb/style.css -> .config/vimb/style.css
-vimb/userscript.js -> .config/vimb/scripts.js
 
 [[psg]]
 psg/git -> .config/psg/git.sh
 psg/psgrc -> .config/psg/psg.json
+
+
+[[fonts]]
+fonts/FantasqueSans.ttf -> $HOME/.fonts/FantasqueSans.ttf
+fonts/FantasqueSansMono-Bold.ttf -> $HOME/.fonts/FantasqueSansMono-Bold.ttf
+fonts/FantasqueSansMono-BoldItalic.ttf -> $HOME/.fonts/FantasqueSansMono-BoldItalic.ttf
+fonts/FantasqueSansMono-Italic.ttf -> $HOME/.fonts/FantasqueSansMono-Italic.ttf
+fonts/FantasqueSansMono-Regular.ttf -> $HOME/.fonts/FantasqueSansMono-Regular.ttf
+
+
+[[X11]] @ mnemosyne
+X11/mnemosyne/monitor_setup.sh -> $HOME/.config/x11/monitor_setup.sh
+
+
+[[themes]]
+themes/solarizedDark -> $HOME/.themes/font/solarizedDark
+
+
+[[tint3]] @ mnemosyne
+tint3/mnemosyne/.tint3rc -> $HOME/.tint3rc
+
+
 
