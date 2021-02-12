@@ -4,14 +4,16 @@ set rtp+=~/.vim/bundle/Vundle.vim,/usr/local/share/vim/syntax/syntax.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on    " required
+" Plugin 'scrooloose/syntastic'
 
 
 let g:NERDTreeHijackNetrw=0
@@ -64,7 +66,10 @@ let NERDTreeShowHidden=1
 
 :hi Directory guifg=#00FFFF ctermfg=cyan
 
-
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  " ...
+augroup END
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -79,3 +84,4 @@ let g:syntastic_c_no_include_search = 1
 
 let g:syntastic_c_include_dirs = [ '/usr/include/freetype2', 'include' ]
 
+set backspace=indent,eol,start

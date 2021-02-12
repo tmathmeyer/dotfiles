@@ -1,10 +1,10 @@
 [[bar]]
   fontcolor #ffffff
-  background #55000000
+  fontname Fantasque Sans Mono:size=10
   borderwidth 0
   padding 6
-  margin 0
   location bottom
+  monitor DP-2
   options debug
   left
     desktops
@@ -13,9 +13,6 @@
     time
     date
   right
-    upload
-    download
-    ram
     weather
     volume
 
@@ -23,50 +20,49 @@
   id active
   source window_title
 
-# %N -> Name of the desktop
 [desktops]
   id workspace
   format %N
-  current HIGHLIGHT|UNDERLINE
+  active:background` #00ff00
 
-
-
-
-# split time and date, looks better on a dual monitor system
 [time]
   id clock
   timeout 5
   format %T
+  shell bg.sh
 
 [date]
   id clock
   format %a - %d
 
-[spacer]
-  id text
-  source |
-
 [weather]
   id weather
-  format %W, ▉%F (%H)
-  source Boston,usa
+  format %W, %F°F (%H%%)
+  source Seattle,usa
 
 [download]
   id graph
   source network wlp3s0 down
-  forground #D58D6B
+  forground #ff0000
 
-[upload]
-  id graph
-  source network wlp3s0 up
-  shell dmenu_run
-  forground #748DA6
+#dual battery system (x240)
+[batteryone]
+  id scale
+  source battery BAT1
+  high_font #00FF00
+  med_font #FFFF00
+  low_font #222222
+  low_color #FF0000
+
+[batterytwo]
+  id scale
+  source battery BAT0
+  high_font #00FF00
+  med_font #FFFF00
+  low_font #222222
+  low_color #FF0000
 
 [volume]
   id scale
   source alsa 0 Master
   shell amixer set Master toggle
-
-[ram]
-  id shell
-  source free | grep Mem | awk '{print $3/$2 * 100.0}'

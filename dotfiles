@@ -7,11 +7,10 @@ tmux/tmux.conf -> .tmux.conf
 
 [[bspwm]]
 bspwm/bspwmrc -> .config/bspwm/bspwmrc
-bspwm/gruvbox -> .config/bspwm/gruvbox
-bspwm/cyan -> .config/bspwm/cyan
-bspwm/noufie -> .config/bspwm/noufie
 [ted@hyperion]
-bspwm/bspwmrc.hyperion -> .config/bspwm/bspwmrc
+bspwm/setup-desktops -> .config/bspwm/setup-desktops
+bspwm/setup-wallpaper -> .config/bspwm/setup-wallpaper
+bspwm/start-tint3 -> .config/bspwm/start-tint3
 
 [[bin]]
 bin/autoup -> .bin/autoup

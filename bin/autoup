@@ -1,6 +1,6 @@
 #!/bin/sh
 SSHKEY=$HOME/.ssh/id_rsa
-SERVER=tmathmeyer.me
+SERVER=tedm.io
 WEBROOT=/var/www
 WEBDIR=files
 USER=ted

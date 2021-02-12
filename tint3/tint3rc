@@ -1,10 +1,11 @@
 [[bar]]
   fontcolor #ffffff
-  fontname Fantasque Sans Mono
+  background #2b002b36
+  fontname Fantasque Sans Mono:size=30
   borderwidth 0
   padding 6
-  margin 0
   location top
+  monitor DisplayPort-1
   options debug
   left
     desktops
@@ -13,11 +14,8 @@
     time
     date
   right
-    download
     weather
     volume
-    batteryone
-    batterytwo
 
 [active]
   id active
@@ -26,7 +24,7 @@
 [desktops]
   id workspace
   format %N
-  active:background #2002
+  active:background #dd002b36
 
 [time]
   id clock
@@ -41,7 +39,7 @@
 [weather]
   id weather
   format %W, %F°F (%H%%)
-  source Boston,usa
+  source Seattle,usa
 
 [download]
   id graph

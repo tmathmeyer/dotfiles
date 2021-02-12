@@ -1,0 +1,5 @@
+#!/bin/bash
+
+bspc monitor $MON_LEFT -d 1 2
+bspc monitor $MON_RIGHT -d 3 4
+

@@ -1,49 +1,33 @@
-#
-# bspwm hotkeys
-#
+# reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
 
+# close a window
 super + w
-	bspc window -c
+	bspc node -c
 
+#set to floating, tiled or fullscreen
 super + {space,t,f}
-	bspc window -t {floating,tiled,fullscreen}
+	bspc node -t {floating,tiled,fullscreen}
 
+# Cycle thru the displayed windows.
 super + {_,shift + }c
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}
 
-super + {comma,period}
-	bspc desktop -C {backward,forward}
+alt + ctrl + {h,j,k,l}
+    bspc node -f {@brother,@first,@parent,@brother}
 
-super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
-
-super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
-
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+alt + ctrl + r
+  bspc node -R 90
 
 ~button1
 	bspc pointer -g focus
 
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
-
-super + !button{1-3}
-	bspc pointer -t %i %i
-
-super + @button{1-3}
-	bspc pointer -u
-
-
-#
-# my bspwm configs
-#
-alt + ctrl + r
-	bspc desktop -R 90
+alt + t
+    urxvt
 
 alt + ctrl + {Left,Right}
-    bspc desktop -f {prev,next}
+    bspc desktop -f {prev,next
 
 alt + button{1-3}
     bspc pointer -g {move, resize_side, resize_corner}
@@ -55,19 +39,13 @@ alt + @button{1-3}
     bspc pointer -u
 
 alt + F4
-    bspc window -c
+    bspc node -c
 
 super + {Up,Down,Left,Right}
-	bspc window -p {up,down,left,right}
+	bspc node -p {up,down,left,right}
 
 super + space
-	bspc window -t floating
-
-
-
-#
-# wm independent hotkeys
-#
+	bspc node -t floating
 
 alt + space
 	exec dmscript
@@ -77,12 +55,6 @@ alt + p
 
 alt + w
 	exec netmenu -nb "#2d2d2d" -bc "#2d2d2d" -l 10 -w 320 -x 800 -y 0 -sb "#4d4d4d" -nf "#aaaaaa" -sf "#bbbbbb" -p wifi
-
-super + Escape
-	pkill -USR1 -x sxhkd
-
-Print
-	gyazo
 
 XF86AudioRaiseVolume
 	amixer set Master 2%+
@@ -103,4 +75,4 @@ XF86Tools
 	lock
 
 XF86Search
-	exec scrot
+	exec scrot -s

@@ -1,12 +1,19 @@
 #!/bin/bash
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/misc
-xset +fp $HOME/.fonts
 xset fp rehash
 
 xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xresources
 
 export PATH="~/.bin:${PATH}"
+
+export MON_LEFT="DP-2"
+export MON_RIGHT="DP-0"
+
+xrandr --auto --output $MON_LEFT --left-of $MON_RIGHT
+xrandr --auto --output $MON_LEFT --rotate left
+xrandr --auto --output $MON_RIGHT --mode 3840x2160 --pos 2160x1380
+
 
 exec bspwm
