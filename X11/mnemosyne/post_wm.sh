@@ -18,10 +18,10 @@ wmname LG3D &
 # sxhkd
 sxhkd &
 
-# Compositor
-#exec compton &
+# bspwm mnemosyne specific info
+bspc config bottom_padding 60
+bspc monitor -d 1 2
 
 # exec tint3
-bspc config bottom_padding 60
 tint3 &
 
