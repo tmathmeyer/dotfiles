@@ -31,14 +31,6 @@
           ],
           "install": "$HOME/.config/bspwm/setup-wallpaper",
           "depends": []
-        },
-        {
-          "name": "start-tint3",
-          "hosts": [
-            "default"
-          ],
-          "install": "$HOME/.config/bspwm/start-tint3",
-          "depends": []
         }
       ]
     },
@@ -141,7 +133,7 @@
       "groupname": "tint3",
       "units": [
         {
-          "name": ".tint3rc",
+          "name": "tint3rc",
           "hosts": [
             "default",
             "mnemosyne"
@@ -168,9 +160,10 @@
       "groupname": "compton",
       "units": [
         {
-          "name": "compton.conf.helios",
+          "name": "compton.conf",
           "hosts": [
-            "default"
+            "default",
+            "helios"
           ],
           "install": "$HOME/.compton.conf",
           "depends": []
@@ -252,6 +245,20 @@
             "default"
           ],
           "install": "$HOME/.themes/font/solarizedDark",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "chromium",
+      "units": [
+        {
+          "name": "chromium-flags.conf",
+          "hosts": [
+            "default",
+            "mnemosyne"
+          ],
+          "install": "/home/ted/.config/chromium-flags.conf",
           "depends": []
         }
       ]
