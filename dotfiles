@@ -5,11 +5,9 @@ tmux/tmux.conf -> .tmux.conf
 [[bspwm]]
 bspwm/bspwmrc -> .config/bspwm/bspwmrc
 bspwm/setup-wallpaper -> .config/bspwm/setup-wallpaper
-bspwm/start-tint3 -> .config/bspwm/start-tint3
 
 
 [[bash]]
-bash -> .bash
 bash/bash_aliases -> .bash_aliases
 bash/bash_profile -> .bash_profile
 bash/bashrc -> .bashrc
@@ -26,7 +24,7 @@ sxhkd/sxhkdrc -> .config/sxhkd/sxhkdrc
 
 
 [[tint3]]
-tint3/tint3rc -> .tint3rc
+tint3/.tint3rc -> .tint3rc
 
 
 [[dunst]]
@@ -34,7 +32,11 @@ dunst/dunstrc -> .config/dunst/dunstrc
 
 
 [[compton]]
-compton/compton.conf.helios -> .compton.conf
+compton/compton.conf -> .compton.conf
+
+
+[[compton]] @ helios
+compton/helios/compton.conf -> .compton.conf
 
 
 [[psg]]
@@ -51,7 +53,9 @@ fonts/FantasqueSansMono-Regular.ttf -> $HOME/.fonts/FantasqueSansMono-Regular.tt
 
 
 [[X11]] @ mnemosyne
-X11/mnemosyne/monitor_setup.sh -> $HOME/.config/x11/monitor_setup.sh
+X11/mnemosyne/post_wm.sh -> $HOME/.config/x11/post_wm.sh
+X11/mnemosyne/pre_wm.sh -> $HOME/.config/x11/pre_wm.sh
+X11/mnemosyne/start_wm.sh -> $HOME/.config/x11/start_wm.sh
 
 
 [[themes]]
@@ -60,6 +64,3 @@ themes/solarizedDark -> $HOME/.themes/font/solarizedDark
 
 [[tint3]] @ mnemosyne
 tint3/mnemosyne/.tint3rc -> $HOME/.tint3rc
-
-
-

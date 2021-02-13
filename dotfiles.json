@@ -1,0 +1,260 @@
+{
+  "groups": [
+    {
+      "groupname": "tmux",
+      "units": [
+        {
+          "name": "tmux.conf",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.tmux.conf",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "bspwm",
+      "units": [
+        {
+          "name": "bspwmrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/bspwm/bspwmrc",
+          "depends": []
+        },
+        {
+          "name": "setup-wallpaper",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/bspwm/setup-wallpaper",
+          "depends": []
+        },
+        {
+          "name": "start-tint3",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/bspwm/start-tint3",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "bash",
+      "units": [
+        {
+          "name": "bash_aliases",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.bash_aliases",
+          "depends": []
+        },
+        {
+          "name": "bash_profile",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.bash_profile",
+          "depends": []
+        },
+        {
+          "name": "bashrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.bashrc",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "X11",
+      "units": [
+        {
+          "name": "Xresources",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.Xresources",
+          "depends": []
+        },
+        {
+          "name": "xinitrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.xinitrc",
+          "depends": []
+        },
+        {
+          "name": "xmodmaprc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.xmodmaprc",
+          "depends": []
+        },
+        {
+          "name": "post_wm.sh",
+          "hosts": [
+            "mnemosyne"
+          ],
+          "install": "$HOME/.config/x11/post_wm.sh",
+          "depends": []
+        },
+        {
+          "name": "pre_wm.sh",
+          "hosts": [
+            "mnemosyne"
+          ],
+          "install": "$HOME/.config/x11/pre_wm.sh",
+          "depends": []
+        },
+        {
+          "name": "start_wm.sh",
+          "hosts": [
+            "mnemosyne"
+          ],
+          "install": "$HOME/.config/x11/start_wm.sh",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "sxhkd",
+      "units": [
+        {
+          "name": "sxhkdrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/sxhkd/sxhkdrc",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "tint3",
+      "units": [
+        {
+          "name": ".tint3rc",
+          "hosts": [
+            "default",
+            "mnemosyne"
+          ],
+          "install": "$HOME/.tint3rc",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "dunst",
+      "units": [
+        {
+          "name": "dunstrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/dunst/dunstrc",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "compton",
+      "units": [
+        {
+          "name": "compton.conf.helios",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.compton.conf",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "psg",
+      "units": [
+        {
+          "name": "git",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/psg/git.sh",
+          "depends": []
+        },
+        {
+          "name": "psgrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.config/psg/psg.json",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "fonts",
+      "units": [
+        {
+          "name": "FantasqueSans.ttf",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.fonts/FantasqueSans.ttf",
+          "depends": []
+        },
+        {
+          "name": "FantasqueSansMono-Bold.ttf",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.fonts/FantasqueSansMono-Bold.ttf",
+          "depends": []
+        },
+        {
+          "name": "FantasqueSansMono-BoldItalic.ttf",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.fonts/FantasqueSansMono-BoldItalic.ttf",
+          "depends": []
+        },
+        {
+          "name": "FantasqueSansMono-Italic.ttf",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.fonts/FantasqueSansMono-Italic.ttf",
+          "depends": []
+        },
+        {
+          "name": "FantasqueSansMono-Regular.ttf",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.fonts/FantasqueSansMono-Regular.ttf",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "themes",
+      "units": [
+        {
+          "name": "solarizedDark",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.themes/font/solarizedDark",
+          "depends": []
+        }
+      ]
+    }
+  ]
+}

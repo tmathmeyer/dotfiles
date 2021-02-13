@@ -16,6 +16,7 @@
   right
     weather
     volume
+    battery
 
 [active]
   id active
@@ -46,7 +47,7 @@
   source network wlp3s0 down
   forground #ff0000
 
-[batterytwo]
+[battery]
   id scale
   source battery BAT0
   high_font #00FF00

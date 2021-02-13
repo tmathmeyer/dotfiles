@@ -1,4 +1,0 @@
-#!/bin/bash
-
-bspc config -m $MON_LEFT bottom_padding 30
-tint3 &
