@@ -4,8 +4,8 @@
 PATH=$PATH:"$HOME/.bin"
 
 # Monitor setup
-LEFT_MON="DP-2"
-RIGHT_MON="DP-0"
+LEFT_MON="HDMI-0"
+RIGHT_MON="HDMI-1"
 xrandr --output $LEFT_MON --rotate left --left-of $RIGHT_MON
 xrandr --output $RIGHT_MON --pos 2160x1380 --mode 3840x2160
 

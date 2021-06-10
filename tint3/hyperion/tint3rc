@@ -4,7 +4,7 @@
   borderwidth 0
   padding 6
   location bottom
-  monitor DP-2
+  monitor HDMI-0
   options debug
   left
     desktops
