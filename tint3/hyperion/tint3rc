@@ -64,5 +64,5 @@
 
 [volume]
   id scale
-  source alsa 0 Master
+  source alsa 1 Master
   shell amixer set Master toggle
