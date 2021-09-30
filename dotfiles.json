@@ -94,7 +94,7 @@
           "name": "post_wm.sh",
           "hosts": [
             "mnemosyne",
-	    "hyperion"
+            "hyperion"
           ],
           "install": "$HOME/.config/x11/post_wm.sh",
           "depends": []
@@ -103,7 +103,7 @@
           "name": "pre_wm.sh",
           "hosts": [
             "mnemosyne",
-	    "hyperion"
+            "hyperion"
           ],
           "install": "$HOME/.config/x11/pre_wm.sh",
           "depends": []
@@ -112,7 +112,7 @@
           "name": "start_wm.sh",
           "hosts": [
             "mnemosyne",
-	    "hyperion"
+            "hyperion"
           ],
           "install": "$HOME/.config/x11/start_wm.sh",
           "depends": []
@@ -139,7 +139,7 @@
           "name": "tint3rc",
           "hosts": [
             "default",
-	    "hyperion",
+            "hyperion",
             "mnemosyne"
           ],
           "install": "$HOME/.tint3rc",
@@ -263,6 +263,35 @@
             "mnemosyne"
           ],
           "install": "/home/ted/.config/chromium-flags.conf",
+          "depends": []
+        }
+      ]
+    },
+    {
+      "groupname": "vim",
+      "units": [
+        {
+          "name": "bundle",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.vim/bundle",
+          "depends": []
+        },
+        {
+          "name": "colors",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.vim/colors",
+          "depends": []
+        },
+        {
+          "name": "vimrc",
+          "hosts": [
+            "default"
+          ],
+          "install": "$HOME/.vimrc",
           "depends": []
         }
       ]
