@@ -93,7 +93,8 @@
         {
           "name": "post_wm.sh",
           "hosts": [
-            "mnemosyne"
+            "mnemosyne",
+	    "hyperion"
           ],
           "install": "$HOME/.config/x11/post_wm.sh",
           "depends": []
@@ -101,7 +102,8 @@
         {
           "name": "pre_wm.sh",
           "hosts": [
-            "mnemosyne"
+            "mnemosyne",
+	    "hyperion"
           ],
           "install": "$HOME/.config/x11/pre_wm.sh",
           "depends": []
@@ -109,7 +111,8 @@
         {
           "name": "start_wm.sh",
           "hosts": [
-            "mnemosyne"
+            "mnemosyne",
+	    "hyperion"
           ],
           "install": "$HOME/.config/x11/start_wm.sh",
           "depends": []
@@ -136,6 +139,7 @@
           "name": "tint3rc",
           "hosts": [
             "default",
+	    "hyperion",
             "mnemosyne"
           ],
           "install": "$HOME/.tint3rc",
