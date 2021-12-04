@@ -140,7 +140,8 @@
           "hosts": [
             "default",
             "hyperion",
-            "mnemosyne"
+            "mnemosyne",
+            "tmathmeyer-linuxstation"
           ],
           "install": "$HOME/.tint3rc",
           "depends": []
