@@ -11,6 +11,7 @@ PackageSet (
     "libxcb-ewmh-dev",
     "libxcb-keysyms1-dev",
     "libxcb-shape0-dev",
+    "wmname",
   ],
 )
 

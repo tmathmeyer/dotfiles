@@ -3,8 +3,8 @@
   fontname Fantasque Sans Mono:size=10
   borderwidth 0
   padding 6
-  location bottom
-  monitor HDMI-0
+  location top
+  monitor DVI-I-1
   options debug
   left
     desktops

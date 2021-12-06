@@ -13,7 +13,7 @@ ExecuteTool (
 ExecuteTool (
   name = "download_vundle",
   deps = [ ":vim_fs_setup" ],
-  execute = "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim",
+  execute = "[ ! -d '~/.vim/bundle/Vundle.vim' ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim",
 )
 
 ExecuteTool (

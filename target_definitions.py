@@ -70,16 +70,12 @@ def _ConfigSet(target, files, **kwargs):
 @buildmacro
 def ConfigSet(macro_env, name, deps, files):
   import os
-  def PrependHostname(filemap, file_only=False):
+  def PrependHostname(filemap):
     file, dest = filemap
     hostname = os.uname()[1]
     host_specific = f'{macro_env.GetLocation()}/{hostname}/{file}'
     if os.path.exists(host_specific):
-      if file_only:
-        return f'{hostname}/{file}'
       return f'{hostname}/{file}', dest
-    if file_only:
-      return f'default/{file}'
     return f'default/{file}', dest
 
   macro_env.ImitateRule(
@@ -89,5 +85,5 @@ def ConfigSet(macro_env, name, deps, files):
       'name': name,
       'deps': deps,
       'files': files.Map(lambda x: PrependHostname(x)),
-      'srcs': files.Map(lambda x: PrependHostname(x, True))
+      'srcs': files.Map(lambda x: PrependHostname(x)[0])
     })

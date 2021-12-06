@@ -10,5 +10,5 @@ SourceBuild (
 ConfigSet (
   name = "sxhkd_config",
   deps = [ ":skhxd_install" ],
-  files = [ ("sxhkdrd", "{HOME}/.config/sxhkd/sxhkdrc") ],
+  files = [ ("sxhkdrc", "{HOME}/.config/sxhkd/sxhkdrc") ],
 )
