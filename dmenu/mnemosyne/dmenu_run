@@ -1,0 +1,18 @@
+#!/bin/sh
+stest=$(which stest)
+cache="$HOME/.dmenu_cache"
+if $stest -dqr -n "$cache" $PATH; then
+    $stest -flx $PATH | sort -u > "$cache"
+fi
+
+
+PATH=$PATH:"$HOME/.bin"
+(
+    IFS=:
+    if stest -dqr -n "$cache" $PATH; then
+        stest -flx $PATH | sort -u | tee "$cache" | dmenu "$@"
+    else
+        dmenu "$@" < "$cache"
+    fi
+) | ${SHELL:-"/home/sh"} &
+

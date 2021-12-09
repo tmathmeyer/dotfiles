@@ -1,5 +1,5 @@
 ! the font face
-URxvt*font: xft:Fantasque Sans Mono:size=10
+URxvt*font: xft:Fantasque Sans Mono:size=8
 
 ! font colors
 #include "/home/ted/.themes/font/solarizedDark"

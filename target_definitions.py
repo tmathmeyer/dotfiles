@@ -3,9 +3,10 @@ def env(pattern):
   return pattern.replace('{HOME}', os.environ['HOME'])
 
 
+@using(env)
 @buildrule
 def ExecuteTool(target, execute, **kwargs):
-  target.Execute(execute)
+  target.Execute(env(execute))
 
 
 @using(env)
@@ -13,7 +14,7 @@ def ExecuteTool(target, execute, **kwargs):
 def PackageSet(target, **platforms):
   tools = {
     "debian": ('/etc/debian_version', 'apt-get install -o DPkg::Lock::Timeout=-1', 'apt-cache policy'),
-    "arch": ('/etc/arch-release', 'pacman -S', None)
+    "arch": ('/etc/arch-release', 'pacman --noconfirm -S', None)
   }
   for platform in platforms:
     versionfile, tool, check = tools.get(platform, ('', '', None))

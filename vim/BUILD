@@ -2,7 +2,8 @@ load("//dotfiles/target_definitions.py")
 
 PackageSet (
   name = "vim_install",
-  debian = [ "vim" ],
+  debian = [ "vim", ],
+  arch = [ "vim", ],
 )
 
 ExecuteTool (
@@ -13,7 +14,7 @@ ExecuteTool (
 ExecuteTool (
   name = "download_vundle",
   deps = [ ":vim_fs_setup" ],
-  execute = "[ ! -d '~/.vim/bundle/Vundle.vim' ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim",
+  execute = "[ -d \"{HOME}/.vim/bundle/Vundle.vim\" ] || git clone https://github.com/VundleVim/Vundle.vim.git {HOME}/.vim/bundle/Vundle.vim",
 )
 
 ExecuteTool (
@@ -29,6 +30,7 @@ ExecuteTool (
 ConfigSet (
   name = "vim_config",
   deps = [
+    ":download_vundle",
   ],
   files = [
     ("colors/molokai.vim", "{HOME}/.vim/colors/molokai.vim"),

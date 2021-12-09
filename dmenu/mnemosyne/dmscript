@@ -1,0 +1,2 @@
+#!/bin/bash
+dmenu_run -nb "#2d2d2d" -bc "#2d2d2d" -l 10 -fn FantasqueSansMono -o 0.9 -p "Run" -sb "#1262fd" -nf "#aaaaaa" -sf "#bbbbbb"
