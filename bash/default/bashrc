@@ -25,7 +25,7 @@ if ! shopt -oq posix; then
 fi
 
 # install impulse arg completion script if it exists
-if which impulse_arg_completion; then
+if which impulse_arg_completion > /dev/null; then
   . "$(which impulse_arg_completion)"
 fi
 
@@ -62,7 +62,7 @@ precmd() {
     return
   fi
 
-  if ! which psg; then
+  if ! which psg2 > /dev/null; then
     no_xsession
     return
   fi
@@ -80,7 +80,7 @@ precmd() {
 # export other environment variables
 export EDITOR=vim
 export VISUAL=vim
-export VIMRUNTIME=/usr/share/vim/vim81
+export VIMRUNTIME=/usr/share/vim/vim82
 export PATH="~/.bin/:$PATH"
 
 # change directory colors
