@@ -40,7 +40,7 @@ let g:tex_flavor = "latex"
 set hls
 set expandtab
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
 set cpoptions-=J
 
 noremap <right> zl
