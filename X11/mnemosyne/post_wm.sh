@@ -20,7 +20,7 @@ sxhkd &
 
 # bspwm mnemosyne specific info
 bspc config bottom_padding 60
-bspc monitor -d 1 2
+bspc monitor -d 1 2 3 4
 
 # exec tint3
 tint3 &

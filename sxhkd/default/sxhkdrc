@@ -41,8 +41,8 @@ super + {Up,Down,Left,Right}
 alt + space
   $HOME/.bin/dmscript
 
-super + shift + {1, 2}
-  bspc node -d {1, 2}
+super + shift + {1, 2, 3, 4}
+  bspc node -d {1, 2, 3, 4}
 
 XF86MonBrightnessDown
   xbacklight -dec 10
