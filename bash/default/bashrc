@@ -80,7 +80,7 @@ precmd() {
 # export other environment variables
 export EDITOR=vim
 export VISUAL=vim
-export VIMRUNTIME=/usr/share/vim/vim82
+export VIMRUNTIME=/usr/share/vim/vim90
 export PATH="~/.bin/:$PATH"
 
 # change directory colors
