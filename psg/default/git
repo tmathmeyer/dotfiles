@@ -11,11 +11,11 @@ localdiffs() {
     res=$(git status --porcelain)
     zero=""
     untracked=$(gitgrep "$res" "^??" 0)
-    modified=$(gitgrep "$res" "^\ M" 0)
-    deleted=$(gitgrep "$res" "^\ D" 0)
-    added=$(gitgrep "$res" "^\ A" 0)
-    renamed=$(gitgrep "$res" "^\ R" 0)
-    conflicting=$(gitgrep "$res" "^\ U" 0)
+    modified=$(gitgrep "$res" "^ M" 0)
+    deleted=$(gitgrep "$res" "^ D" 0)
+    added=$(gitgrep "$res" "^ A" 0)
+    renamed=$(gitgrep "$res" "^ R" 0)
+    conflicting=$(gitgrep "$res" "^ U" 0)
 
     if [ "$zero" != "$untracked" ]; then
         untracked=" ?$untracked"
