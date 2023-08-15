@@ -47,9 +47,19 @@ def SourceBuild(target, source, build_cmd, results, **kwargs):
     BuildAndInstall(source_location)
 
 
-@using(env)
+def PrependHostname(filemap, location):
+  import os
+  file, dest = filemap
+  hostname = os.uname()[1]
+  host_specific = os.path.join(location, hostname, file)
+  if os.path.exists(host_specific):
+    return os.path.join(hostname, file), dest
+  return os.path.join('default', file), dest
+
+@using(env, PrependHostname)
 @buildrule
-def _ConfigSet(target, files, **kwargs):
+def _ConfigSet(target, files, location, **kwargs):
+  files = [PrependHostname(f, location) for f in files]
   for file, dest in files:
     dest = env(dest)
     source = f'{impulse_paths.root()}/{target.GetPackageDirectory()}/{file}'
@@ -70,14 +80,6 @@ def _ConfigSet(target, files, **kwargs):
 
 @buildmacro
 def ConfigSet(macro_env, name, deps, files):
-  import os
-  def PrependHostname(filemap):
-    file, dest = filemap
-    hostname = os.uname()[1]
-    host_specific = f'{macro_env.GetLocation()}/{hostname}/{file}'
-    if os.path.exists(host_specific):
-      return f'{hostname}/{file}', dest
-    return f'default/{file}', dest
 
   macro_env.ImitateRule(
     rulefile = '//dotfiles/target_definitions.py',
@@ -85,6 +87,7 @@ def ConfigSet(macro_env, name, deps, files):
     args = {
       'name': name,
       'deps': deps,
-      'files': files.Map(lambda x: PrependHostname(x)),
-      'srcs': files.Map(lambda x: PrependHostname(x)[0])
+      'files': files,
+      #'srcs': files,
+      'location': macro_env.GetLocation()
     })

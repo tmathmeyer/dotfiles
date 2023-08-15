@@ -1,0 +1,87 @@
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# set bash variables
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s checkwinsize
+shopt -s histappend
+
+# enable bash_completion
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# install impulse arg completion script if it exists
+if which impulse_arg_completion > /dev/null; then
+  . "$(which impulse_arg_completion)"
+fi
+
+psg_error() {
+  export PS1='\u@\h (psg.json missing):\w\$ '
+}
+
+no_xsession() {
+  export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+}
+
+psg_with_git() {
+  if [ ! -f ~/.config/psg/psg.json ]; then
+    no_xsession
+    return
+  fi
+  GIT=$(/home/tmathmeyer/.config/psg/git.sh)
+  export PS1="$(cat ~/.config/psg/psg.json | psg2 user=$1 path="$2" git="$GIT")"
+}
+
+psg_sans_git() {
+  if [ ! -f ~/.config/psg/psg.json ]; then
+    no_xsession
+    return
+  fi
+  export PS1="$(cat ~/.config/psg/psg.json | psg2 user=$1 path="$2")"
+}
+
+# set the PS1 based on whether X is running
+PROMPT_COMMAND=precmd
+precmd() {
+  if [ -z "$DISPLAY" ]; then
+    no_xsession
+    return
+  fi
+
+  if ! which psg2 > /dev/null; then
+    no_xsession
+    return
+  fi
+
+  location="${PWD/$HOME/\~}"
+  if [ "$CHROMIUM_SHELL" ]; then
+    psg_sans_git "$USER" "$location"
+    return
+  fi
+
+  psg_with_git "$USER" "$location"
+  return
+}
+
+# export other environment variables
+export EDITOR=vim
+export VISUAL=vim
+export VIMRUNTIME=/usr/share/vim/vim90
+export PATH="~/.bin/:$PATH"
+
+# change directory colors
+eval $(dircolors -b)

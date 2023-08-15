@@ -38,9 +38,6 @@ alt + F4
 super + {Up,Down,Left,Right}
   bspc node -p {up,down,left,right}
 
-super + space
-  bspc node -t floating
-
 alt + space
   $HOME/.bin/dmscript
 
