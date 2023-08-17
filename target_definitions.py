@@ -87,7 +87,6 @@ def ConfigSet(macro_env, name, deps, files):
     args = {
       'name': name,
       'deps': deps,
-      'files': files,
-      #'srcs': files,
-      'location': macro_env.GetLocation()
+      'files': map(lambda x: PrependHostname(x), files),
+      'srcs': map(lambda x: PrependHostname(x)[0], files),
     })
