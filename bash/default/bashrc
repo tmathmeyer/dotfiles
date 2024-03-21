@@ -24,6 +24,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PATH:$PYENV_ROOT/bin"
+  eval "$(pyenv init -)"
+fi
+
 # install impulse arg completion script if it exists
 if which impulse_arg_completion > /dev/null; then
   . "$(which impulse_arg_completion)"
@@ -80,7 +86,7 @@ precmd() {
 # export other environment variables
 export EDITOR=vim
 export VISUAL=vim
-export VIMRUNTIME=/usr/share/vim/vim90
+export VIMRUNTIME=/usr/share/vim/vim91
 export PATH="~/.bin/:$PATH"
 
 # change directory colors
