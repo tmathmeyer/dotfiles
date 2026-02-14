@@ -1,1 +1,6 @@
+TTYID=$(tty)
+if [ -z "$DISPLAY" ] && [ -z "$XDG_VNTR" ] && [ "$TTYID" == "/dev/tty1" ]; then
+  exec startx
+fi
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc

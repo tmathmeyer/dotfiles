@@ -13,6 +13,12 @@ PackageSet (
     "libxcb-shape0-dev",
     "wmname",
   ],
+  arch = [
+    "gcc",
+    "xcb-util",
+    "xcb-util-keysyms",
+    "xcb-util-wm",
+  ],
 )
 
 SourceBuild (
