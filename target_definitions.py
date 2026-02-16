@@ -58,8 +58,9 @@ def PrependHostname(filemap, location):
 
 @using(env, PrependHostname)
 @buildrule
-def _ConfigSet(target, files, location, **kwargs):
-  files = [PrependHostname(f, location) for f in files]
+def _ConfigSet(target, files, **kwargs):
+  #TODO: '.' in the path is probably wrong!
+  files = [PrependHostname(f, '.') for f in files]
   for file, dest in files:
     dest = env(dest)
     source = f'{impulse_paths.root()}/{target.GetPackageDirectory()}/{file}'
@@ -87,6 +88,5 @@ def ConfigSet(macro_env, name, deps, files):
     args = {
       'name': name,
       'deps': deps,
-      'files': map(lambda x: PrependHostname(x), files),
-      'srcs': map(lambda x: PrependHostname(x)[0], files),
+      'files': files,
     })

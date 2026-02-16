@@ -24,10 +24,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -d "$HOME/.pyenv" ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PATH:$PYENV_ROOT/bin"
-  eval "$(pyenv init -)"
+if [ -f ~/.uv_bashenv.sh ]; then
+  . ~/.uv_bashenv.sh
 fi
 
 # install impulse arg completion script if it exists
@@ -91,3 +89,6 @@ export PATH="~/.bin/:$PATH"
 
 # change directory colors
 eval $(dircolors -b)
+
+# uv
+export PATH="/home/ted/.local/bin:$PATH"
