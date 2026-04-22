@@ -13,6 +13,7 @@ PackageSet (
     "libxcb-shape0-dev",
     "wmname",
   ],
+  arch = [ "bspwm" ],
 )
 
 SourceBuild (

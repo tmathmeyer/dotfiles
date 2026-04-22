@@ -27,26 +27,6 @@ def PackageSet(target, **platforms):
         target.Execute(f'sudo {tool} {package}')
 
 
-@using(env)
-@buildrule
-def SourceBuild(target, source, build_cmd, results, **kwargs):
-  def BuildAndInstall(source_location):
-    target.Execute(build_cmd.format(src=source_location))
-    for result in results:
-      target.Execute(f'sudo install {source_location}/{result} /usr/local/bin')
-
-  for alternate in kwargs.get('alternates', []):
-    alternate = env(alternate)
-    if os.path.exists(alternate):
-      source_location = alternate
-      BuildAndInstall(source_location)
-      return
-
-  with target.UseTempDir() as source_location:
-    target.Execute(f'git clone {source} {source_location}')
-    BuildAndInstall(source_location)
-
-
 def PrependHostname(filemap, location):
   import os
   file, dest = filemap
@@ -80,13 +60,34 @@ def _ConfigSet(target, files, **kwargs):
 
 
 @buildmacro
-def ConfigSet(macro_env, name, deps, files):
+def ConfigSet(macro_env, name, files, **kwargs):
 
   macro_env.ImitateRule(
     rulefile = '//dotfiles/target_definitions.py',
     rulename = '_ConfigSet',
     args = {
       'name': name,
-      'deps': deps,
+      'deps': kwargs.get('deps', []),
       'files': files,
     })
+
+
+@using(env)
+@buildrule
+def SourceBuild(target, source, build_cmd, results, **kwargs):
+  def BuildAndInstall(source_location):
+    target.Execute(build_cmd.format(src=source_location))
+    for result in results:
+      target.Execute(f'sudo install {source_location}/{result} /usr/local/bin')
+
+  for alternate in kwargs.get('alternates', []):
+    alternate = env(alternate)
+    if os.path.exists(alternate):
+      source_location = alternate
+      BuildAndInstall(source_location)
+      return
+
+  with target.UseTempDir() as source_location:
+    target.Execute(f'git clone {source} {source_location}')
+    BuildAndInstall(source_location)
+

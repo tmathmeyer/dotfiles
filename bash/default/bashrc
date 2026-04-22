@@ -84,7 +84,7 @@ precmd() {
 # export other environment variables
 export EDITOR=vim
 export VISUAL=vim
-export VIMRUNTIME=/usr/share/vim/vim91
+export VIMRUNTIME=/usr/share/vim/vim92
 export PATH="~/.bin/:$PATH"
 
 # change directory colors
@@ -92,3 +92,4 @@ eval $(dircolors -b)
 
 # uv
 export PATH="/home/ted/.local/bin:$PATH"
+source ~/.API_KEYS

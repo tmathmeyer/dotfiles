@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias scrabble="npx scrabble-solver@2.15.24"
 
 extract () {
     if [ -f $1 ] ; then
