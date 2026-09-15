@@ -8,7 +8,8 @@ PackageSet (
 SourceBuild (
   name = "impulse_binary",
   deps = [ ":impulse_deps" ],
-  source = "https://github.com/tmathmeyer/impulse.git",
+  #source = "https://github.com/tmathmeyer/impulse.git",
+  source = "/usr/local/google/home/tmathmeyer/git/personal/impulse",
   alternates = ("{HOME}/Git/impulse/", "{HOME}/git/impulse"),
   build_cmd = "make -C {src}",
   results = [

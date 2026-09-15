@@ -1,0 +1,9 @@
+! the font face
+URxvt*font: xft:Fantasque Sans Mono:size=10
+
+! font colors
+#include "/usr/local/google/home/tmathmeyer/.themes/font/solarizedDark"
+
+! terminal colors and settings
+URxvt*scrollBar:  false
+URxvt*lineSpace: -1

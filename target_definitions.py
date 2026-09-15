@@ -23,7 +23,8 @@ def PackageSet(target, **platforms):
         if check is not None:
           r = target.RunCommand(f'{check} {package}')
           if not r.returncode:
-            continue
+            if platform != 'debian' or 'Installed: (none)' not in r.stdout:
+              continue
         target.Execute(f'sudo {tool} {package}')
 
 
@@ -47,22 +48,21 @@ def SourceBuild(target, source, build_cmd, results, **kwargs):
     BuildAndInstall(source_location)
 
 
-def PrependHostname(filemap, location):
-  import os
+def PrependHostname(filemap):
   file, dest = filemap
   hostname = os.uname()[1]
-  host_specific = os.path.join(location, hostname, file)
+  host_specific = os.path.join(hostname, file)
   if os.path.exists(host_specific):
     return os.path.join(hostname, file), dest
   return os.path.join('default', file), dest
 
 @using(env, PrependHostname)
 @buildrule
-def _ConfigSet(target, files, location, **kwargs):
-  files = [PrependHostname(f, location) for f in files]
+def _ConfigSet(target, files, **kwargs):
   for file, dest in files:
     dest = env(dest)
-    source = f'{impulse_paths.root()}/{target.GetPackageDirectory()}/{file}'
+    root = os.environ['impulse_root']
+    source = f'{root}/{target.GetPackageDirectory()}/{file}'
     if not os.path.exists(source):
       raise ValueError(f'source {source} does not exist!')
     if not os.path.exists(dest):
@@ -80,6 +80,9 @@ def _ConfigSet(target, files, location, **kwargs):
 
 @buildmacro
 def ConfigSet(macro_env, name, deps, files):
+  files = list(map(PrependHostname, files))
+  srcs = list(map(lambda x: x[0], files))
+  print(srcs)
 
   macro_env.ImitateRule(
     rulefile = '//dotfiles/target_definitions.py',
@@ -87,6 +90,8 @@ def ConfigSet(macro_env, name, deps, files):
     args = {
       'name': name,
       'deps': deps,
-      'files': map(lambda x: PrependHostname(x), files),
-      'srcs': map(lambda x: PrependHostname(x)[0], files),
+      'files': files,
+      'srcs': srcs,
+      #'files': map(lambda x: PrependHostname(x), files),
+      #'srcs': map(lambda x: PrependHostname(x)[0], files),
     })

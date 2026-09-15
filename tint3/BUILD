@@ -2,7 +2,15 @@ load("//dotfiles/target_definitions.py")
 
 PackageSet (
   name = "tint3_dependencies",
-  debian = [ "libx11-dev" ],
+  debian = [
+    "libx11-dev",
+    "libxft-dev",
+    "libxcb-util0-dev",
+    "libxcb-icccm4-dev",
+    "libxcb-ewmh-dev",
+    "libxinerama-dev",
+    "libxrandr-dev",
+  ],
 )
 
 SourceBuild (

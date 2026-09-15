@@ -7,7 +7,7 @@ PackageSet (
     "libxcb-randr0-dev",
     "libxcb-icccm4-dev",
     "libxcb-xinerama0",
-    "libxcb-xinerama0",
+    "libxcb-xinerama0-dev",
     "libxcb-ewmh-dev",
     "libxcb-keysyms1-dev",
     "libxcb-shape0-dev",
