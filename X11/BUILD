@@ -2,7 +2,7 @@ load("//dotfiles/target_definitions.py")
 
 PackageSet (
   name = "xorg_packages",
-  debian = [ "server-xephyr" ],
+  debian = [ "xserver-xephyr" ],
 )
 
 ConfigSet (

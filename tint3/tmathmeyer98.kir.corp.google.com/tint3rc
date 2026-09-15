@@ -1,0 +1,46 @@
+[[bar]]
+  fontcolor #ffffff
+  fontname Fantasque Sans Mono:size=10
+  borderwidth 0
+  padding 6
+  location bottom
+  monitor DisplayPort-1
+  options debug
+  left
+    desktops
+    active
+  center
+    time
+    date
+  right
+    weather
+    volume
+
+[active]
+  id active
+  source window_title
+
+[desktops]
+  id workspace
+  format %N
+  active:background` #00ff00
+
+[time]
+  id clock
+  timeout 5
+  format %T
+  shell bg.sh
+
+[date]
+  id clock
+  format %a - %d
+
+[weather]
+  id weather
+  format %W, %F°F (%H%%)
+  source Seattle,usa
+
+[volume]
+  id scale
+  source alsa 1 Master
+  shell amixer set Master toggle

@@ -82,8 +82,6 @@ def _ConfigSet(target, files, **kwargs):
 def ConfigSet(macro_env, name, deps, files):
   files = list(map(PrependHostname, files))
   srcs = list(map(lambda x: x[0], files))
-  print(srcs)
-
   macro_env.ImitateRule(
     rulefile = '//dotfiles/target_definitions.py',
     rulename = '_ConfigSet',

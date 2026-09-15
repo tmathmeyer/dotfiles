@@ -4,12 +4,10 @@
 PATH=$PATH:"$HOME/.bin"
 
 # Monitor setup
-CENTER_MON="DVI-I-1"
-LEFT_MON="DP-3"
-RIGHT_MON="DP-2"
-xrandr --output $LEFT_MON --rotate left --left-of $CENTER_MON
-xrandr --output $CENTER_MON --primary --pos 1440x300
-xrandr --output $RIGHT_MON --rotate right --right-of $LEFT_MON --pos 4000x500
+xrandr --output DisplayPort-0 --off \
+       --output DisplayPort-1 --mode 2560x1440 --pos 4000x0 --rotate right \
+       --output DisplayPort-2 --mode 2560x1440 --pos 1440x615 --rotate normal \
+       --output DisplayPort-3 --mode 2560x1440 --pos 0x0 --rotate left
 
 # Setup Wallpaper
 $HOME/.config/bspwm/setup-wallpaper &
@@ -20,12 +18,8 @@ wmname LG3D &
 # sxhkd
 sxhkd &
 
-# bspwm mnemosyne specific info
-bspc monitor $LEFT_MON -d 1 2
-bspc monitor $RIGHT_MON -d 3 4
-
 # exec tint3
-bspc config -m $CENTER_MON top_padding 30
+bspc config -m DisplayPort-1 bottom_padding 30
 tint3 &
 
 xrdb -merge ~/.Xresources
